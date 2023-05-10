@@ -1,6 +1,12 @@
 import { getFormData } from "./utils/getFormData";
 import { auth } from "../api/firebase";
-import { createUserWithEmailAndPassword, signOut } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signOut,
+  sendSignInLinkToEmail,
+  getAuth,
+} from "firebase/auth";
+
 import { firebaseErrors } from "./utils/firebaseErrors";
 import { useState } from "react";
 import { db } from "../api/firebase";
@@ -12,22 +18,62 @@ import {
   onSnapshot,
   updateDoc,
 } from "firebase/firestore";
+import { getPassword } from "./utils/getPassword";
 
 export function Register() {
   const handleRegister = (e) => {
     e.preventDefault();
-    const { name, lastName, email, password } = getFormData(e);
-    createUserWithEmailAndPassword(auth, email, password, name, lastName)
-      .then((jwt) => {
-        e.target.reset();
-        console.log(jwt);
-        signOut(auth);
-      })
-      .catch((e) => {
-        console.dir(e);
-        alert(firebaseErrors[e.code]);
-      });
+
+    if (getPassword(e)) {
+      const { name, lastName, email, password } = getFormData(e);
+      createUserWithEmailAndPassword(auth, email, password, name, lastName)
+        .then((jwt) => {
+          e.target.reset();
+          console.log(jwt);
+          signOut(auth);
+          sendEmail(email);
+        })
+        .catch((e) => {
+          console.dir(e);
+          alert(firebaseErrors[e.code]);
+        });
+    } else {
+      alert("Niepoprawne hasło");
+    }
   };
+
+  const actionCodeSettings = {
+    // URL you want to redirect back to. The domain (www.example.com) for this
+    // URL must be in the authorized domains list in the Firebase Console.
+    url: "https://solid-umbrella-9kwygj6.pages.github.io/",
+    // This must be true.
+    handleCodeInApp: true,
+    iOS: {
+      bundleId: "com.example.ios",
+    },
+    android: {
+      packageName: "com.example.android",
+      installApp: true,
+      minimumVersion: "12",
+    },
+    dynamicLinkDomain: "example.page.link",
+  };
+
+  const auth = getAuth();
+  const sendEmail = (email) =>
+    sendSignInLinkToEmail(auth, email, actionCodeSettings)
+      .then(() => {
+        // The link was successfully sent. Inform the user.
+        // Save the email locally so you don't need to ask the user for it again
+        // if they open the link on the same device.
+        window.localStorage.setItem("emailForSignIn", email);
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ...
+      });
 
   return (
     <form onSubmit={handleRegister}>
@@ -35,6 +81,11 @@ export function Register() {
       <input placeholder="Nazwisko" name="lastName"></input>
       <input placeholder="E-mail" name="email" type="email"></input>
       <input placeholder="Hasło" name="password" type="password"></input>
+      <input
+        placeholder="Powtórz hasło"
+        name="password1"
+        type="password"
+      ></input>
       <button type="submit">Zarejestruj się</button>
     </form>
   );

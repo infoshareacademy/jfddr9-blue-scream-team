@@ -12,6 +12,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { Register } from "./components/Register";
+import { Login } from "./components/Login";
 
 const Contener = styled.div`
   font-size: 36px;
@@ -25,7 +26,7 @@ function App() {
       {text.exampleReducer.text}
       <Routes>
         <Route path={"/home"} element={<div>home</div>} />
-        <Route path={"/login"} element={<div>login</div>} />
+        <Route path={"/login"} element={<Login />} />
         <Route path={"/register"} element={<Register />} />
       </Routes>
     </Contener>
