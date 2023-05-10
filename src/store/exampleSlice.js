@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const exampleSlice = createSlice({
   name: "example",
   initialState: {
-    text: "Hi, Blue Scream Team :)",
+    text: "Hi, Blue Scream",
   },
   reducers: {
     updateString: (state, action) => {

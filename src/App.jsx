@@ -2,6 +2,12 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import { Home } from "./pages/Home";
+import { Header } from "./components/header";
+import { Search } from "./components/search";
+import { Main } from "./components/main";
+import { Footer } from "./components/footer";
+import { useNavigate } from "react-router-dom";
 import { db } from "./api/firebase";
 import {
   addDoc,
@@ -19,16 +25,22 @@ const Contener = styled.div`
 
 function App() {
   const text = useSelector((state) => state);
-
+  const navigate = useNavigate();
   return (
-    <Contener>
-      {text.exampleReducer.text}
-      <Routes>
-        <Route path={"/home"} element={<div>home</div>} />
-        <Route path={"/login"} element={<div>login</div>} />
-        <Route path={"/register"} element={<Register />} />
-      </Routes>
-    </Contener>
+    <>
+      <Header />
+
+      <Search />
+      <Main />
+      <Footer />
+      <Contener>
+        <Routes>
+          <Route path={"/home"} element={<Home></Home>} />
+          <Route path={"/login"} element={<div>login</div>} />
+          <Route path={"/register"} element={<Register />} />
+        </Routes>
+      </Contener>
+    </>
   );
 }
 
