@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Home } from "./pages/Home";
-import { Header } from "./components/header";
+import { Header } from "./components/Auth/header";
 import { Search } from "./components/search";
 import { Main } from "./components/main";
 import { Footer } from "./components/footer";

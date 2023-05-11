@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../api/firebase";
+import { auth } from "../../api/firebase";
 import {
   createUserWithEmailAndPassword,
   signOut,
