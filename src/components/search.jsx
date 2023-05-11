@@ -4,7 +4,7 @@ const SearchText = styled.div`
   max-width: 1920px;
   height: 150px;
   padding: 20px;
-  border: 2px solid black;
+  
 
   justify-content: center;
   align-items: center;
@@ -18,6 +18,7 @@ export function Search() {
         className="input"
         placeholder="Wpisz nazwę miasta, które Cię interesuje"
       ></input>
+      <button className="firstbutton">Search</button>
     </SearchText>
   );
 }

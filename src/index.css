@@ -70,8 +70,8 @@ button:focus-visible {
 .firstbutton {
   background-color: rgb(45, 45, 58);
   color: white;
-  height: 30px;
-  width: 70px;
+  height: 55px;
+  width: 100px;
   border-radius: 10px;
 }
 .buttons {
