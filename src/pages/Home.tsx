@@ -1,4 +1,13 @@
+
+import { Search } from "../components/search";
+
+
+
 export function Home() {
-  return <span>Hello! zmiany zmiany zmiany </span>;
+  return (
+    <>
+    <Search />
+    </>
+  )
 }
 export default Home;
