@@ -19,6 +19,7 @@ import {
 } from "firebase/firestore";
 import { Register } from "./components/Register";
 import { Login } from "./components/Login";
+import { AuthButtons } from "./components/Auth/AuthButtons";
 
 const Contener = styled.div`
   font-size: 36px;
@@ -29,11 +30,8 @@ function App() {
   const navigate = useNavigate();
   return (
     <>
-      <Header />
+      <AuthButtons />
 
-      <Search />
-      <Main />
-      <Footer />
       <Contener>
         <Routes>
           <Route path={"/home"} element={<Home></Home>} />
