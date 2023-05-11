@@ -30,7 +30,7 @@ function App() {
       <Header />
 
       <Search />
-      
+
       <Contener>
         <Routes>
           <Route path={"/home"} element={<Home></Home>} />

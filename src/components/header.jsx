@@ -8,7 +8,7 @@ import {
   getAuth,
 } from "firebase/auth";
 import { useState, useEffect } from "react";
-import { onAuthStateChanged } from 'firebase/auth'
+import { onAuthStateChanged } from "firebase/auth";
 const HeaderText = styled.div`
   display: flex;
   max-width: 1920px;
@@ -22,36 +22,35 @@ const HeaderText = styled.div`
 
 export function Header() {
   const navigate = useNavigate();
-  const [isAuth, setIsAuth] = useState(null)
-  const [user, setUser] = useState(null)
-  const [role, setRole] = useState(null) // 'admin' | 'user' | 'unauthorized' | null
+  const [isAuth, setIsAuth] = useState(null);
+  const [user, setUser] = useState(null);
+  const [role, setRole] = useState(null); // 'admin' | 'user' | 'unauthorized' | null
 
   useEffect(() => {
-    onAuthStateChanged(auth, user => {
+    onAuthStateChanged(auth, (user) => {
       if (user) {
-        setIsAuth(true)
-    
+        setIsAuth(true);
       } else {
-        setIsAuth(false)
-      
+        setIsAuth(false);
       }
-    })
-  }, [])
+    });
+  }, []);
 
   if (isAuth === null) {
-    return <h1>Trwa ładowanie aplikacji...</h1>
+    return <h1>Trwa ładowanie aplikacji...</h1>;
   }
   const handleClick = () => {
-    signOut(auth)
-    navigate("/")
-  }
+    signOut(auth);
+    navigate("/");
+  };
   return (
     <HeaderText>
       <div className="buttons">
-        {isAuth && <button onClick={handleClick} className="firstbutton">
-          LogOut
-        </button>}
-        
+        {isAuth && (
+          <button onClick={handleClick} className="firstbutton">
+            LogOut
+          </button>
+        )}
       </div>
     </HeaderText>
   );
