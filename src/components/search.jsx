@@ -4,7 +4,6 @@ const SearchText = styled.div`
   max-width: 1920px;
   height: 150px;
   padding: 20px;
-  
 
   justify-content: center;
   align-items: center;
