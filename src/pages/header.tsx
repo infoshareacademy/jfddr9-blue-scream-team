@@ -4,5 +4,5 @@ const HeaderText = styled.div`
 `;
 
 export function Header() {
-  return <HeaderText>Menu</HeaderText>;
+  return <HeaderText></HeaderText>;
 }
