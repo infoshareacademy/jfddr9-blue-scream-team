@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { Home } from "./pages/Home";
-import { Header } from "./components/header";
 import { Search } from "./components/search";
 import { useNavigate } from "react-router-dom";
 import { db } from "./api/firebase";
@@ -27,10 +26,8 @@ function App() {
   const navigate = useNavigate();
   return (
     <>
-      <Header />
-
       <Search />
-      
+
       <Contener>
         <Routes>
           <Route path={"/home"} element={<Home></Home>} />
