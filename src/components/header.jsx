@@ -1,11 +1,19 @@
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { auth } from "../api/firebase";
+import {
+  createUserWithEmailAndPassword,
+  signOut,
+  sendSignInLinkToEmail,
+  getAuth,
+} from "firebase/auth";
+import { useState, useEffect } from "react";
+import { onAuthStateChanged } from 'firebase/auth'
 const HeaderText = styled.div`
   display: flex;
   max-width: 1920px;
   height: 150px;
   padding: 20px;
-  border: 2px solid black;
 
   justify-content: center;
   align-items: center;
@@ -14,15 +22,36 @@ const HeaderText = styled.div`
 
 export function Header() {
   const navigate = useNavigate();
+  const [isAuth, setIsAuth] = useState(null)
+  const [user, setUser] = useState(null)
+  const [role, setRole] = useState(null) // 'admin' | 'user' | 'unauthorized' | null
+
+  useEffect(() => {
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        setIsAuth(true)
+    
+      } else {
+        setIsAuth(false)
+      
+      }
+    })
+  }, [])
+
+  if (isAuth === null) {
+    return <h1>Trwa ładowanie aplikacji...</h1>
+  }
+  const handleClick = () => {
+    signOut(auth)
+    navigate("/")
+  }
   return (
     <HeaderText>
       <div className="buttons">
-        <button onClick={() => navigate("/login")} className="firstbutton">
-          Login
-        </button>
-        <button onClick={() => navigate("/register")} className="firstbutton">
-          Register
-        </button>
+        {isAuth && <button onClick={handleClick} className="firstbutton">
+          LogOut
+        </button>}
+        
       </div>
     </HeaderText>
   );

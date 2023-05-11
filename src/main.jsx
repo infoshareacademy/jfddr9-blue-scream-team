@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+import Searchinput from "./searchinput.jsx";
 import { Provider } from "react-redux";
 import { store } from "./store/store.js";
 import "./index.css";
@@ -10,7 +10,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <HashRouter>
-        <App />
+        <Searchinput />
       </HashRouter>
     </Provider>
   </React.StrictMode>
