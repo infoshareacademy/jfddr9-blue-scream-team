@@ -2,7 +2,7 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { Home } from "./pages/Home";
+import Home from "./pages/Home";
 import { Header } from "./components/Auth/header";
 import { Search } from "./components/search";
 import { Main } from "./components/main";
