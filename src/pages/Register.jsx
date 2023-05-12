@@ -1,4 +1,4 @@
-import { getFormData } from "./utils/getFormData";
+import { getFormData } from "../components/utils/getFormData";
 import { auth } from "../api/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -7,7 +7,7 @@ import {
   getAuth,
 } from "firebase/auth";
 
-import { firebaseErrors } from "./utils/firebaseErrors";
+import { firebaseErrors } from "../components/utils/firebaseErrors";
 import { useState } from "react";
 import { db } from "../api/firebase";
 import {
@@ -18,7 +18,7 @@ import {
   onSnapshot,
   updateDoc,
 } from "firebase/firestore";
-import { getPassword } from "./utils/getPassword";
+import { getPassword } from "../components/utils/getPassword";
 import { useNavigate } from "react-router-dom";
 
 export function Register() {
