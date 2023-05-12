@@ -1,6 +1,6 @@
 
 import { Search } from "../components/search";
-import OpenTripMapExample from "../../src/OpenTripMap.jsx"
+import OpenTripMapExample from "../OpenTripMap.jsx"
 
 
 export function Home() {
