@@ -1,7 +1,7 @@
-import { getFormData } from "./utils/getFormData";
-import { auth } from "./../api/firebase";
+import { getFormData } from "../components/utils/getFormData";
+import { auth } from "../api/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { firebaseErrors } from "./utils/firebaseErrors";
+import { firebaseErrors } from "../components/utils/firebaseErrors";
 import { useNavigate } from "react-router-dom";
 
 export const Login = () => {

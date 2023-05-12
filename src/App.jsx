@@ -17,9 +17,11 @@ import {
   onSnapshot,
   updateDoc,
 } from "firebase/firestore";
-import { Register } from "./components/Register";
-import { Login } from "./components/Login";
+import { Register } from "./pages/Register";
+import { Login } from "./pages/Login";
 import { AuthButtons } from "./components/Auth/AuthButtons";
+import ConfirmationModal from "./components/ConfirmationModal";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const Contener = styled.div`
   font-size: 36px;
@@ -31,6 +33,7 @@ function App() {
   return (
     <>
       <AuthButtons />
+      <ConfirmationModal />
 
       <Contener>
         <Routes>
