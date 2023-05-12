@@ -3,9 +3,14 @@ import { auth } from "../api/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseErrors } from "../components/utils/firebaseErrors";
 import { useNavigate } from "react-router-dom";
+import { Register } from "./Register"; 
 
 export const Login = () => {
   const navigate = useNavigate();
+
+  const navigateToRegistration = () => {
+    navigate("/register") 
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -24,10 +29,14 @@ export const Login = () => {
   };
 
   return (
+    <>
     <form onSubmit={handleLogin}>
       <input placeholder="E-mail" name="email" type="email"></input>
       <input placeholder="Hasło" name="password" type="password"></input>
       <button type="submit">Zaloguj się</button>
     </form>
+    <button className="firstbutton" onClick={navigateToRegistration}>Go to Registration</button>
+    </>
+    
   );
 };
