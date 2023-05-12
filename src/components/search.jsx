@@ -62,7 +62,7 @@ export function Search() {
         .then((response) => response.json())
         .then((data) => {
           console.log(storedAttractions.length);
-          data.image &&
+          data.preview &&
             storedAttractions.length < 10 &&
             dispatch(addAttraction(data));
           setInterval(() => {
