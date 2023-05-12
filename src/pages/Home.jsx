@@ -1,17 +1,16 @@
 import { Search } from "../components/search";
-import OpenTripMapExample from "../OpenTripMap.jsx";
-import Tile from "../components/Tile";
-import { useSelector } from "react-redux";
+// import OpenTripMapExample from "../OpenTripMap.jsx"
+import AutoLayout from "./cards";
 
-function Home() {
-  const attractions = useSelector((state) => state);
-  console.log(attractions);
+
+export function Home() {
   return (
     <>
-      {/* <OpenTripMapExample /> */}
-      <Search />
-      <Tile />
+    
+    {/* <OpenTripMapExample /> */}
+    <Search />
+    <AutoLayout />
     </>
-  );
+  )
 }
 export default Home;

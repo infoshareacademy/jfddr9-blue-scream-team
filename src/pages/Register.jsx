@@ -78,8 +78,12 @@ export function Register() {
     //     // ...
     //   });
   };
+  const navigateToLogin = () => {
+    navigate("/login") 
+  }
 
   return (
+    <>
     <form onSubmit={handleRegister}>
       <input placeholder="Imię" name="name"></input>
       <input placeholder="Nazwisko" name="lastName"></input>
@@ -92,5 +96,7 @@ export function Register() {
       ></input>
       <button type="submit">Zarejestruj się</button>
     </form>
+    <button className="firstbutton" onClick={navigateToLogin}>Go to Login</button>
+    </>
   );
 }
