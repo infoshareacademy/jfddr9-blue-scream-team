@@ -8,13 +8,14 @@ function AutoLayout() {
   const storedAttractions = useSelector(
     (state) => state.attractionsReducer.attractions
   );
+  console.log(storedAttractions);
   return (
     <Container className="container">
       <Row className="insiderow">
-        {storedAttractions.map((item) => {
+        {storedAttractions.map((id) => {
           return (
-            <Col className="colhome" key={item.preview.source}>
-              <Tile item={item} />
+            <Col className="colhome">
+              <Tile id={id} />
             </Col>
           );
         })}
