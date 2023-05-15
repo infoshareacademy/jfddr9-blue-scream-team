@@ -4,8 +4,8 @@ import Modal from "react-bootstrap/Modal";
 
 function ConfirmationModal({ isAdd }) {
   const [show, setShow] = useState(false);
-  const buttonText = isAdd ? "Dodaj do listy" : "Usuń z listy";
-  const bodyText = isAdd ? "Dodano do listy" : "Usunięto z listy";
+  const buttonText = !isAdd ? "Dodaj do listy" : "Usuń z listy";
+  const bodyText = !isAdd ? "Dodano do listy" : "Usunięto z listy";
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

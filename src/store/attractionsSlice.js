@@ -13,7 +13,8 @@ export const attractionsSlice = createSlice({
     },
     addAttraction: (state, action) => {
       const attraction = action.payload;
-      state.attractions = [attraction, ...state.attractions];
+      console.log(attraction);
+      state.attractions = attraction;
     },
   },
 });

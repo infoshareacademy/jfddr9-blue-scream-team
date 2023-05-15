@@ -1,19 +1,24 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
+import { useState, useRef } from "react";
+import { Collapse } from "@mui/material";
+import { useIsInViewport } from "./utils/useIsInViewport";
+import { AttractionCard } from "./attractionCard";
+import ConfirmationModal from "./ConfirmationModal";
 
-function Tile({ item }) {
+function Tile({ id }) {
+  const [open, setOpen] = useState(false);
+  const elementRef = useRef(null);
+  const isInViewport = useIsInViewport(elementRef);
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={item.preview.source} />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
+    <>
+      <div style={{ minHeight: "150px" }} ref={elementRef}>
+        <Collapse in={isInViewport} dimension="width">
+          <ConfirmationModal />
+          {isInViewport && <AttractionCard id={id} />}
+        </Collapse>
+      </div>
+    </>
   );
 }
 
