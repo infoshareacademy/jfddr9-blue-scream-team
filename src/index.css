@@ -108,15 +108,30 @@ body {
 }
 
 .container {
-  display: block;
+ display: block;
  border: solid pink;
  gap: 10px;
  border-radius: 10px;
 }
+
 .insiderow {
   padding: 10px;
   gap: 20px;
   flex-wrap: wrap;
   height: 500px; 
   overflow-y: scroll;
+}
+
+footer {
+  display: flex;
+  font-size: 40px;
+  justify-content: right;
+  margin-top: 20px;
+}
+
+li {
+  justify-content: right;
+  list-style-type: none;
+  display: inline;
+  padding: 20px;
 }
