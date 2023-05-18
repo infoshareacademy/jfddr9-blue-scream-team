@@ -18,6 +18,7 @@ function Tile({ id }) {
           <ConfirmationModal id={id} />
           {isInViewport && <AttractionCard id={id} />}
         </Collapse>
+        <ConfirmationModal />
       </div>
     </>
   );
