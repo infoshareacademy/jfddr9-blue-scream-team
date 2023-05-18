@@ -14,9 +14,10 @@ function Tile({ id }) {
     <>
       <div style={{ minHeight: "150px" }} ref={elementRef}>
         <Collapse in={isInViewport} dimension="width">
-          <ConfirmationModal />
+          
           {isInViewport && <AttractionCard id={id} />}
         </Collapse>
+        <ConfirmationModal />
       </div>
     </>
   );

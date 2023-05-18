@@ -96,13 +96,13 @@ body {
 }
 .colhome {
   display: grid;
-  background-color: aliceblue;
-  /* width: 400px; */
-  height: 400px;
-  border: solid;
-  border-radius: 10px;
+  /* background-color: aliceblue; */
+  width: 550px;
+  height: 550px;
+  /* border: solid; */
+  /* border-radius: 10px; */
   align-items: center;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   flex: 1 0 33.33%;
   
 }
@@ -119,4 +119,25 @@ body {
   flex-wrap: wrap;
   height: 500px; 
   overflow-y: scroll;
+}
+
+
+.card-body img {
+max-height: 300px;
+
+}
+.card {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  position: 50% 50%;
+  opacity: 0.7;
+  
+
+}
+.card-body {
+  font-size: 12px;
 }
