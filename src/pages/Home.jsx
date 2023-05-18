@@ -1,7 +1,7 @@
 import { Search } from "../components/search";
 // import OpenTripMapExample from "../OpenTripMap.jsx"
 import AutoLayout from "./cards";
-
+import Footer from "../components/footer";
 
 export function Home() {
   return (
@@ -10,6 +10,7 @@ export function Home() {
     {/* <OpenTripMapExample /> */}
     <Search />
     <AutoLayout />
+    <Footer />
     </>
   )
 }
