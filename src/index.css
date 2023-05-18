@@ -122,7 +122,6 @@ body {
   overflow-y: scroll;
 }
 
-<<<<<<< HEAD
 
 .card-body img {
 max-height: 300px;
@@ -142,7 +141,7 @@ max-height: 300px;
 }
 .card-body {
   font-size: 12px;
-=======
+}
 footer {
   display: flex;
   font-size: 40px;
@@ -155,5 +154,4 @@ li {
   list-style-type: none;
   display: inline;
   padding: 20px;
->>>>>>> main
 }

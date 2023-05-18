@@ -34,7 +34,7 @@ export function Search() {
 
   useEffect(() => {
     fetch(
-      `https://api.opentripmap.com/0.1/en/places/radius?radius=30000&lon=${cordinate.lon}&lat=${cordinate.lat}&apikey=${apiKey}`
+      `https://api.opentripmap.com/0.1/en/places/radius?radius=400&lon=${cordinate.lon}&lat=${cordinate.lat}&apikey=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -55,7 +55,7 @@ export function Search() {
       });
   };
 
-  // 
+  //
   // const fetchAtraction = () => {
   //   fetch(
   //     `https://api.opentripmap.com/0.1/en/places/radius?radius=30000&lon=${cordinate.lon}&lat=${cordinate.lat}&apikey=${apiKey}`
