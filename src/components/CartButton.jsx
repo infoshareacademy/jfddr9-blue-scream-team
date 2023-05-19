@@ -9,7 +9,7 @@ export function CartButton() {
 
   return (
     <button type="submit" onClick={navigateToCart}>
-      Przejdź do listy
+      Go to list
     </button>
   );
 }
