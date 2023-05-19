@@ -24,6 +24,8 @@ import ConfirmationModal from "./components/ConfirmationModal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Cart } from "./pages/Cart";
 import CityList from "./pages/CityList";
+import Attraction from "./pages/Attraction";
+import MyJourney from "./components/MyJourney";
 
 const Contener = styled.div`
   font-size: 36px;
@@ -46,7 +48,8 @@ function App() {
           <Route path={"/register"} element={<Register />} />
           <Route path={"/cart"} element={<Cart />} />
           <Route path={"/cityList"} element={<CityList/>} />
-
+          <Route path={"/attraction/:id"} element={<Attraction />}/>
+          <Route path={"/journey/:id"} element={<MyJourney />}/>
         </Routes>
       </Contener>
     </>
