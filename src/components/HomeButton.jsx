@@ -8,8 +8,8 @@ export function HomeButton() {
   };
 
   return (
-    <button type="submit" onClick={navigateToHome}>
-      Przejdź do wyszukiwania atrakcji
+    <button className="firstbutton" type="submit" onClick={navigateToHome}>
+      Go to Search
     </button>
   );
 }

@@ -8,8 +8,8 @@ export function CartButton() {
   };
 
   return (
-    <button type="submit" onClick={navigateToCart}>
-      Przejdź do listy
+    <button className="firstbutton" type="submit" onClick={navigateToCart}>
+      Go to list
     </button>
   );
 }

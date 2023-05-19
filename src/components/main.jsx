@@ -13,3 +13,5 @@ const MainText = styled.div`
 export function Main() {
   return <MainText>Main</MainText>;
 }
+
+

@@ -4,7 +4,7 @@ export function SignInButton() {
   const navigate = useNavigate();
   return (
     <button onClick={() => navigate("/login")} className="firstbutton">
-      Zaloguj się
+      Login
     </button>
   );
 }

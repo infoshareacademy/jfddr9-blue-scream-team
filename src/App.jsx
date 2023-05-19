@@ -37,6 +37,8 @@ function App() {
   return (
     <>
       <AuthButtons />
+    
+      
       {/* <ConfirmationModal /> */}
 
       <Contener>
