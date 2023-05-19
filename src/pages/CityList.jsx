@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "../api/firebase";
+import HomeButton from "../components/HomeButton";
 
 function CityList() {
   const citiesCollection = collection(db, "TravelPlans");
@@ -30,6 +31,7 @@ function CityList() {
         <li>
           <p>Tu bedzie nazwa maista- pobrana?</p>
           <button type="submit">Usuń</button>
+          <HomeButton />
         </li>
       </ol>
     </div>

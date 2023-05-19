@@ -8,6 +8,7 @@ import { useState } from "react";
 import { db } from "../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import CityListButton from "../components/ListButton";
 
 const cartRef = collection(db, "TravelPlans");
 
@@ -54,6 +55,7 @@ export function Cart() {
           </Row>
         </Container>
         <HomeButton />
+        <CityListButton />
         <form id="form_div">
           <input
             type="text"
