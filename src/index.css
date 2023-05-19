@@ -9,6 +9,7 @@
   font-weight: bold;
   margin-left: 30px;
   border: solid pink;
+
 }
 .buttons {
   display: flex;
@@ -40,7 +41,7 @@ body {
   opacity: 0.7;
   flex: 1 0 33.33%;
   border: solid pink;
-  
+
 }
 
 .container {
