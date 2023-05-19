@@ -6,8 +6,10 @@ import {
   onSnapshot,
 } from "firebase/firestore";
 import { db } from "../api/firebase";
+import { useNavigate } from "react-router-dom";
 
 function CityList() {
+  const navigate = useNavigate();
   const citiesCollection = collection(db, "TravelPlans");
 
   const [cityList, setCityList] = useState([]);
@@ -30,7 +32,7 @@ function CityList() {
   return (
     <div>
       <h1>Moja lista miast</h1>
-      <div>
+      <div onClick={() => navigate(`/travel/${city.id}`)}>
         <ol style={{ listStyle: "decimal" }}>
           {cityList.map((city) => (
             <li
@@ -41,7 +43,6 @@ function CityList() {
                 listStyle: "decimal",
               }}
             >
-        
               <div>
                 <p>{city.travelName}</p>
                 <button>Usuń</button>
