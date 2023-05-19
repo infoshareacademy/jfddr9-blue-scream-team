@@ -4,7 +4,7 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../store/cartSlice";
 
-function ConfirmationModal({ id, isAdd }) {
+function ConfirmationModal({ id, isAdd, attraction }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const buttonText = !isAdd ? "Dodaj do listy" : "Usuń z listy";
@@ -12,7 +12,7 @@ function ConfirmationModal({ id, isAdd }) {
   const handleClose = () => setShow(false);
   const handleShow = () => {
     if (id) {
-      dispatch(isAdd ? removeFromCart(id) : addToCart(id));
+      dispatch(isAdd ? removeFromCart(attraction) : addToCart(attraction));
       setShow(true);
     }
   };

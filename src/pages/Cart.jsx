@@ -13,9 +13,8 @@ const cartRef = collection(db, "TravelPlans");
 
 export function Cart() {
   const auth = getAuth();
-  console.log(auth);
+
   const storedAttractions = useSelector((state) => state.cartReducer.cart);
-  console.log(storedAttractions);
 
   const [travelName, setTravelName] = useState("");
 
@@ -29,25 +28,25 @@ export function Cart() {
     };
 
     addDoc(cartRef, travelData)
-    .then(() => {
-      alert("Dodano do bazy podróży");
-      setTravelName("");
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+      .then(() => {
+        alert("Dodano do bazy podróży");
+        setTravelName("");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
-
+  console.log(storedAttractions);
   return (
     <div>
       <h1>My travel list</h1>
       <div>
         <Container className="container">
           <Row className="insiderow">
-            {storedAttractions.map((id) => {
+            {storedAttractions.map((item) => {
               return (
                 <Col className="colhome">
-                  <Tile id={id} />
+                  <Tile id={item.id} />
                 </Col>
               );
             })}

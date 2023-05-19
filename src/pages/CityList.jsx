@@ -27,7 +27,7 @@ function CityList() {
       setCityList(cities);
     });
   }, []);
-  console.log(cityList);
+
 
   return (
     <div>

@@ -31,7 +31,7 @@ export function Register() {
       createUserWithEmailAndPassword(auth, email, password, name, lastName)
         .then((jwt) => {
           e.target.reset();
-          console.log(jwt);
+         
           signOut(auth);
           sendEmail(email);
           navigate("/login");

@@ -14,12 +14,12 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("tekst");
+    
     const { email, password } = getFormData(e);
     signInWithEmailAndPassword(auth, email, password)
       .then((jwt) => {
         e.target.reset();
-        console.log(jwt);
+      
         navigate("/home");
       })
       .catch((e) => {
