@@ -31,11 +31,22 @@ export const Login = () => {
   return (
     <>
     <form onSubmit={handleLogin}>
-      <input placeholder="E-mail" name="email" type="email"></input>
-      <input placeholder="Password" name="password" type="password"></input>
-      <button type="submit">Login</button>
+      <div className="loginwindow">
+<input placeholder="E-mail" name="email" type="email" className="input"></input>
+      <input placeholder="Password" name="password" type="password" className="input"></input>
+      <div className="loginbuttons">
+<button className="firstbutton" type="submit">Login</button>
+<button className="firstbutton" onClick={navigateToRegistration}>Register</button>
+
+      </div>
+      
+      </div>
+
+
+
+      
     </form>
-    <button className="firstbutton" onClick={navigateToRegistration}>Go to registration</button>
+    
     </>
     
   );

@@ -96,7 +96,7 @@ export function Register() {
       ></input>
       <button type="submit">Register</button>
     </form>
-    <button className="firstbutton" onClick={navigateToLogin}>Go to Login</button>
+    <button className="firstbutton" onClick={navigateToLogin}>Login</button>
     </>
   );
 }

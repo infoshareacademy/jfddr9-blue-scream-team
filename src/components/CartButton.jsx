@@ -8,7 +8,7 @@ export function CartButton() {
   };
 
   return (
-    <button type="submit" onClick={navigateToCart}>
+    <button className="firstbutton" type="submit" onClick={navigateToCart}>
       Go to list
     </button>
   );

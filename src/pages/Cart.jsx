@@ -40,8 +40,8 @@ export function Cart() {
   };
 
   return (
-    <div>
-      <h1>My travel list</h1>
+    <div className="traveltitle">
+      <h1>MY TRAVEL LIST</h1>
       <div>
         <Container className="container">
           <Row className="insiderow">
@@ -62,8 +62,8 @@ export function Cart() {
             value={travelName}
             onChange={(e) => setTravelName(e.target.value)}
           />
-          <button type="submit" onClick={handleSubmit}>
-            Zapisz podróż
+          <button className="firstbutton" type="submit" onClick={handleSubmit}>
+            Save Trip
           </button>
         </form>
       </div>
