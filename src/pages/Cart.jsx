@@ -28,14 +28,14 @@ export function Cart() {
       attraction: storedAttractions,
     };
 
-    addDoc(cartRef, travelData);
-    // .then(() => {
-    //   alert("Dodano do bazy podróży");
-    //   setTravelName("");
-    // })
-    // .catch((error) => {
-    //   console.log(error);
-    // });
+    addDoc(cartRef, travelData)
+    .then(() => {
+      alert("Dodano do bazy podróży");
+      setTravelName("");
+    })
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   return (

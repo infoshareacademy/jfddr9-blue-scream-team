@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { collection, onSnapshot } from "firebase/firestore";
+import {
+  QueryDocumentSnapshot,
+  collection,
+  getDocs,
+  onSnapshot,
+} from "firebase/firestore";
 import { db } from "../api/firebase";
 
 function CityList() {
@@ -20,18 +25,31 @@ function CityList() {
       setCityList(cities);
     });
   }, []);
-
   console.log(cityList);
 
   return (
     <div>
-      <ol>
-        <h1>Moja lista miast</h1>
-        <li>
-          <p>Tu bedzie nazwa maista- pobrana?</p>
-          <button type="submit">Usuń</button>
-        </li>
-      </ol>
+      <h1>Moja lista miast</h1>
+      <div>
+        <ol style={{ listStyle: "decimal" }}>
+          {cityList.map((city) => (
+            <li
+              key={city.id}
+              style={{
+                display: "list-item",
+                listStylePosition: "inside",
+                listStyle: "decimal",
+              }}
+            >
+        
+              <div>
+                <p>{city.travelName}</p>
+                <button>Usuń</button>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
     </div>
   );
 }
