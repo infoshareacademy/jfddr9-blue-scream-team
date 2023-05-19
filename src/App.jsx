@@ -23,6 +23,7 @@ import { AuthButtons } from "./components/Auth/AuthButtons";
 import ConfirmationModal from "./components/ConfirmationModal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Cart } from "./pages/Cart";
+import CityList from "./pages/CityList";
 
 const Contener = styled.div`
   font-size: 36px;
@@ -42,6 +43,7 @@ function App() {
           <Route path={"/login"} element={<Login />} />
           <Route path={"/register"} element={<Register />} />
           <Route path={"/cart"} element={<Cart />} />
+          <Route path={"/cityList"} element={<CityList/>} />
 
         </Routes>
       </Contener>

@@ -80,14 +80,27 @@ export function Search() {
   //   });
   // };
 
+  const storedAttractionsCart = useSelector((state) => state.cartReducer.cart);
+
+  const handleChange = (e) => {
+    setCity(e.target.value);
+    if (!!storedAttractionsCart.length) {
+      alert("Zapisz najpierw atrakcje z bieżącego miasta");
+    }
+  };
+
   return (
     <SearchText>
       <input
-        onChange={(e) => setCity(e.target.value)}
+        onChange={handleChange}
         className="input"
         placeholder="Wpisz nazwę miasta, które Cię interesuje"
       ></input>
-      <button onClick={handleClick} className="firstbutton">
+      <button
+        onClick={handleClick}
+        className="firstbutton"
+        disabled={!!storedAttractionsCart.length}
+      >
         Search
       </button>
     </SearchText>
