@@ -27,10 +27,10 @@ function CityList() {
   return (
     <div>
       <ol>
-        <h1>Moja lista miast</h1>
+        <h1>List of places</h1>
         <li>
           <p>Tu bedzie nazwa maista- pobrana?</p>
-          <button type="submit">Usuń</button>
+          <button type="submit">Remove</button>
           <HomeButton />
         </li>
       </ol>

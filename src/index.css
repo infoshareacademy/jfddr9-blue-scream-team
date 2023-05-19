@@ -3,7 +3,7 @@
   background-color: rgb(236, 155, 170);
   color: white;
   height: 50px;
-  width: 120px;
+  width: 130px;
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: bold;
@@ -78,5 +78,32 @@ li {
 }
 
 .svg-inline--fa {
-  color: rgb(236, 155, 170)
+  color: rgb(236, 155, 170);
+}
+
+.footer1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  margin-bottom: 40px;
+}
+
+.traveltitle h1 {
+  color: rgb(236, 155, 170);
+  font-weight: bolder;
+}
+
+.loginwindow {
+  display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ margin-top: 20%;
+  gap: 10px;
+}
+
+.loginwindow1 {
+  margin-top: 20%;
 }

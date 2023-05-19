@@ -8,8 +8,8 @@ export function CityListButton() {
   };
 
   return (
-    <button type="submit" onClick={navigateToCityList}>
-      Przejdź do listy miast
+    <button className="firstbutton"  type="submit" onClick={navigateToCityList}>
+      Go to Places
     </button>
   );
 }

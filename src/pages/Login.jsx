@@ -14,7 +14,7 @@ export const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("tekst");
+    console.log("text");
     const { email, password } = getFormData(e);
     signInWithEmailAndPassword(auth, email, password)
       .then((jwt) => {
@@ -31,11 +31,22 @@ export const Login = () => {
   return (
     <>
     <form onSubmit={handleLogin}>
-      <input placeholder="E-mail" name="email" type="email"></input>
-      <input placeholder="Hasło" name="password" type="password"></input>
-      <button type="submit">Zaloguj się</button>
+      <div className="loginwindow">
+<input placeholder="E-mail" name="email" type="email" className="input"></input>
+      <input placeholder="Password" name="password" type="password" className="input"></input>
+      <div className="loginbuttons">
+<button className="firstbutton" type="submit">Login</button>
+<button className="firstbutton" onClick={navigateToRegistration}>Register</button>
+
+      </div>
+      
+      </div>
+
+
+
+      
     </form>
-    <button className="firstbutton" onClick={navigateToRegistration}>Go to Registration</button>
+    
     </>
     
   );
