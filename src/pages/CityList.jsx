@@ -32,10 +32,11 @@ function CityList() {
   return (
     <div>
       <h1>Moja lista miast</h1>
-      <div onClick={() => navigate(`/travel/${city.id}`)}>
+      <div>
         <ol style={{ listStyle: "decimal" }}>
           {cityList.map((city) => (
             <li
+              onClick={() => navigate(`/journey/${city.id}`)}
               key={city.id}
               style={{
                 display: "list-item",
