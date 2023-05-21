@@ -59,12 +59,21 @@ function BookingForm() {
           onChange={formik.handleChange}
           value={formik.values.adult}
         />
+        <labe htmlFor="startDate">Początek podróży: </labe>
         <DatePicker
+          id="startDate"
           name="startDate"
           selected={formik.values.startDate}
           onChange={formik.handleChange}
         />
-        <button type="submit">Book</button>
+        <labe htmlFor="endDate">Koniec podróży: </labe>
+        <DatePicker
+          id="endDate"
+          name="endDate"
+          selected={formik.values.endDate}
+          onChange={formik.handleChange}
+        />
+        <button type="submit">Szukaj</button>
       </form>
     </div>
   );
