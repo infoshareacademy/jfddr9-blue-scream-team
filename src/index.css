@@ -1,3 +1,10 @@
+body {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+
+
+
 
 .firstbutton {
   background-color: rgb(236, 155, 170);
@@ -40,15 +47,17 @@ body {
   align-items: center;
   opacity: 0.7;
   flex: 1 0 33.33%;
-  border: solid pink;
+  border: solid  pink;
 
 }
 
 .container {
  display: block;
- border: solid pink;
+ border: 10px solid pink;
  gap: 10px;
- border-radius: 10px;
+ border-radius: 15px;
+ 
+
 }
 
 .insiderow {
@@ -106,4 +115,11 @@ li {
 
 .loginwindow1 {
   margin-top: 20%;
+}
+
+.traveldiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }

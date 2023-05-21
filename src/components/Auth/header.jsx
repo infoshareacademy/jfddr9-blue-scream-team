@@ -12,7 +12,7 @@ import { onAuthStateChanged } from "firebase/auth";
 const HeaderText = styled.div`
   display: flex;
   max-width: 1920px;
-  height: 150px;
+  height: 100px;
   padding: 20px;
 
   justify-content: center;
@@ -47,6 +47,7 @@ export function Header() {
     <HeaderText>
       <div className="buttons">
         {isAuth && (
+          
           <button onClick={handleClick} className="firstbutton">
             Logout
           </button>

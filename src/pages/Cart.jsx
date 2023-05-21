@@ -57,7 +57,8 @@ export function Cart() {
         <HomeButton />
         <CityListButton />
         <form id="form_div">
-          <input
+          <div className="traveldiv">
+<input className="input"
             type="text"
             value={travelName}
             onChange={(e) => setTravelName(e.target.value)}
@@ -65,6 +66,9 @@ export function Cart() {
           <button className="firstbutton" type="submit" onClick={handleSubmit}>
             Save Trip
           </button>
+
+          </div>
+          
         </form>
       </div>
     </div>
