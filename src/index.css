@@ -12,7 +12,6 @@ body {
   font-size: 1.2rem;
   font-weight: bold;
   margin-left: 30px;
-  
 }
 .buttons {
   display: flex;
@@ -22,8 +21,6 @@ body {
 }
 body {
   background-color: white;
- 
-  
 }
 
 .input {
@@ -120,11 +117,9 @@ li {
 .background-clicked {
   background-color: rgb(27, 17, 17);
   color: white;
-  
 }
- .background-clicked2 {
+.background-clicked2 {
   background-color: (white);
-  
 }
 
 .headerbuttons {
@@ -133,7 +128,6 @@ li {
 }
 .logo {
   height: 200px;
-
 }
 .buttons {
   align-items: center;
