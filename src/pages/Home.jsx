@@ -10,8 +10,8 @@ export function Home() {
       {/* <OpenTripMapExample /> */}
       <Search />
       <AutoLayout />
-      <Footer />
       <CartButton />
+      <Footer />
     </>
   );
 }

@@ -10,6 +10,7 @@ import { addDoc, collection } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Card } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import CityListButton from "../components/ListButton";
 
 const cartRef = collection(db, "TravelPlans");
 
@@ -40,8 +41,8 @@ export function Cart() {
   };
   console.log(storedAttractions);
   return (
-    <div>
-      <h1>My travel list</h1>
+    <div className="traveltitle">
+      <h1>MY TRAVEL LIST</h1>
       <div>
         <Container className="container">
           <Row className="insiderow">
@@ -61,15 +62,23 @@ export function Cart() {
           </Row>
         </Container>
         <HomeButton />
+        <CityListButton />
         <form id="form_div">
-          <input
-            type="text"
-            value={travelName}
-            onChange={(e) => setTravelName(e.target.value)}
-          />
-          <button type="submit" onClick={handleSubmit}>
-            Zapisz podróż
-          </button>
+          <div className="traveldiv">
+            <input
+              className="input"
+              type="text"
+              value={travelName}
+              onChange={(e) => setTravelName(e.target.value)}
+            />
+            <button
+              className="firstbutton"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Save Trip
+            </button>
+          </div>
         </form>
       </div>
     </div>

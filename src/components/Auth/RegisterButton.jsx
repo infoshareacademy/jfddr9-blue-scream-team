@@ -4,7 +4,7 @@ export function RegisterButton() {
   const navigate = useNavigate();
   return (
     <button onClick={() => navigate("/register")} className="firstbutton">
-      Zarejestruj się
+      Register
     </button>
   );
 }

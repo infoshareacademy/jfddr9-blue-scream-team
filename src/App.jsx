@@ -37,6 +37,7 @@ function App() {
   return (
     <>
       <AuthButtons />
+
       {/* <ConfirmationModal /> */}
 
       <Contener>
@@ -45,9 +46,9 @@ function App() {
           <Route path={"/login"} element={<Login />} />
           <Route path={"/register"} element={<Register />} />
           <Route path={"/cart"} element={<Cart />} />
-          <Route path={"/cityList"} element={<CityList/>} />
-          <Route path={"/attraction/:id"} element={<Attraction />}/>
-          <Route path={"/journey/:id"} element={<MyJourney />}/>
+          <Route path={"/cityList"} element={<CityList />} />
+          <Route path={"/attraction/:id"} element={<Attraction />} />
+          <Route path={"/journey/:id"} element={<MyJourney />} />
         </Routes>
       </Contener>
     </>

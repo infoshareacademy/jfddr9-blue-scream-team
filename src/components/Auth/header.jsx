@@ -12,7 +12,7 @@ import { onAuthStateChanged } from "firebase/auth";
 const HeaderText = styled.div`
   display: flex;
   max-width: 1920px;
-  height: 150px;
+  height: 100px;
   padding: 20px;
 
   justify-content: center;
@@ -37,7 +37,7 @@ export function Header() {
   }, []);
 
   if (isAuth === null) {
-    return <h1>Trwa ładowanie aplikacji...</h1>;
+    return <h1>Loading...</h1>;
   }
   const handleClick = () => {
     signOut(auth);
@@ -48,7 +48,7 @@ export function Header() {
       <div className="buttons">
         {isAuth && (
           <button onClick={handleClick} className="firstbutton">
-            LogOut
+            Logout
           </button>
         )}
       </div>

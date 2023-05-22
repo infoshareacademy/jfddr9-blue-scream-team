@@ -8,7 +8,6 @@ import ConfirmationModal from "./ConfirmationModal";
 import { useSelector } from "react-redux";
 
 function Tile({ id, isButtonVisible = true }) {
-
   const [open, setOpen] = useState(false);
   const elementRef = useRef(null);
   const isInViewport = useIsInViewport(elementRef);
@@ -16,7 +15,7 @@ function Tile({ id, isButtonVisible = true }) {
 
   return (
     <>
-      <div style={{ minHeight: "150px" }} ref={elementRef}>
+      <div style={{ maxHeight: "600px" }} ref={elementRef}>
         <Collapse in={isInViewport} dimension="width">
           {isInViewport && (
             <AttractionCard

@@ -15,6 +15,7 @@ import Tile from "./Tile";
 import { Card } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import MultiMap from "./MultiMap";
+import BookingForm from "./BookingForm";
 
 function MyJourney() {
   const navigate = useNavigate();
@@ -53,6 +54,7 @@ function MyJourney() {
   return (
     <div>
       <h1>MyJourney</h1>
+      <BookingForm />
       <Container className="container">
         <Row className="insiderow">
           {city.attraction.map((item) => {
