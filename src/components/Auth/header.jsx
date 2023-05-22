@@ -9,16 +9,20 @@ import {
 } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
+import logo from "../../images/logo.png"
+import { clickfunction } from "../../components/Theme"
+import { clickfunction2 } from '../../components/Theme';
 const HeaderText = styled.div`
-  display: flex;
-  max-width: 1920px;
-  height: 100px;
-  padding: 20px;
+  // display: flex;
+  // max-width: 1920px;
+  // height: 100px;
+  // padding: 20px;
 
-  justify-content: center;
-  align-items: center;
-  font-size: 45px;
+  // justify-content: center;
+  // align-items: center;
+  // font-size: 45px;
 `;
+
 
 export function Header() {
   const navigate = useNavigate();
@@ -44,14 +48,31 @@ export function Header() {
     navigate("/");
   };
   return (
-    <HeaderText>
+    
+      
+      
+      <div className="headerbuttons">
+
+      <img className="logo" src= {logo}></img>
+
+      
+
+      <div className="buttons">
+            <button onClick={() => clickfunction()} className="firstbutton">Dark mode</button>
+            <button onClick={() => clickfunction2()} className="firstbutton">Light mode</button>
+      </div>
       <div className="buttons">
         {isAuth && (
           <button onClick={handleClick} className="firstbutton">
             Logout
           </button>
+        
         )}
       </div>
-    </HeaderText>
+      </div>
+    
+        
+      
+    
   );
 }
