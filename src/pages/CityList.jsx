@@ -4,6 +4,8 @@ import {
   collection,
   getDocs,
   onSnapshot,
+  doc,
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "../api/firebase";
 import { useNavigate } from "react-router-dom";
@@ -21,13 +23,18 @@ function CityList() {
     }));
   };
 
+  const handleDelete = (id) => {
+    const docRef = doc(db, "TravelPlans", id);
+    deleteDoc(docRef);
+  };
+
   useEffect(() => {
     onSnapshot(citiesCollection, (querySnapshot) => {
       const cities = getCity(querySnapshot);
       setCityList(cities);
     });
   }, []);
-
+  console.log(cityList);
   return (
     <div>
       <h1>Moja lista miast</h1>
@@ -35,7 +42,6 @@ function CityList() {
         <ol style={{ listStyle: "decimal" }}>
           {cityList.map((city) => (
             <li
-              onClick={() => navigate(`/journey/${city.id}`)}
               key={city.id}
               style={{
                 display: "list-item",
@@ -45,7 +51,10 @@ function CityList() {
             >
               <div>
                 <p>{city.travelName}</p>
-                <button>Usuń</button>
+                <button onClick={() => navigate(`/journey/${city.id}`)}>
+                  Zobacz podróż
+                </button>
+                <button onClick={() => handleDelete(city.id)}>Usuń</button>
               </div>
             </li>
           ))}
