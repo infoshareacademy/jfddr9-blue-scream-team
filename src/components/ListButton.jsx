@@ -8,7 +8,7 @@ export function CityListButton() {
   };
 
   return (
-    <button className="firstbutton"  type="submit" onClick={navigateToCityList}>
+    <button className="firstbutton" type="submit" onClick={navigateToCityList}>
       Go to Places
     </button>
   );

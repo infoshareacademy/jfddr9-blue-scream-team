@@ -8,7 +8,6 @@ export function AuthButtons() {
   const href = useHref();
   const path = href.startsWith("#") ? href.slice(1) : href;
 
-
   if (path === "/login" || path === "/register") {
     return null;
   }

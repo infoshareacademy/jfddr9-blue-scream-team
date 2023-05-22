@@ -8,7 +8,6 @@ import ConfirmationModal from "./ConfirmationModal";
 import { useSelector } from "react-redux";
 
 function Tile({ id, isButtonVisible = true }) {
-
   const [open, setOpen] = useState(false);
   const elementRef = useRef(null);
   const isInViewport = useIsInViewport(elementRef);

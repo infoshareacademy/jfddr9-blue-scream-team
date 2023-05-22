@@ -47,7 +47,6 @@ export function Header() {
     <HeaderText>
       <div className="buttons">
         {isAuth && (
-          
           <button onClick={handleClick} className="firstbutton">
             Logout
           </button>

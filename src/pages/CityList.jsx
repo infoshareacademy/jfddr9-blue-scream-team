@@ -29,7 +29,6 @@ function CityList() {
     });
   }, []);
 
-
   return (
     <div>
       <h1>Moja lista miast</h1>

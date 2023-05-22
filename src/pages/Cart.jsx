@@ -57,17 +57,20 @@ export function Cart() {
         <CityListButton />
         <form id="form_div">
           <div className="traveldiv">
-<input className="input"
-            type="text"
-            value={travelName}
-            onChange={(e) => setTravelName(e.target.value)}
-          />
-          <button className="firstbutton" type="submit" onClick={handleSubmit}>
-            Save Trip
-          </button>
-
+            <input
+              className="input"
+              type="text"
+              value={travelName}
+              onChange={(e) => setTravelName(e.target.value)}
+            />
+            <button
+              className="firstbutton"
+              type="submit"
+              onClick={handleSubmit}
+            >
+              Save Trip
+            </button>
           </div>
-          
         </form>
       </div>
     </div>
