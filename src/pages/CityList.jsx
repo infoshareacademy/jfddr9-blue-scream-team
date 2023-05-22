@@ -7,6 +7,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../api/firebase";
 import { useNavigate } from "react-router-dom";
+import HomeButton from "../components/HomeButton";
 
 function CityList() {
   const navigate = useNavigate();
@@ -52,6 +53,14 @@ function CityList() {
           ))}
         </ol>
       </div>
+      <ol>
+        <h1>List of places</h1>
+        <li>
+          <p>Tu bedzie nazwa maista- pobrana?</p>
+          <button type="submit">Remove</button>
+          <HomeButton />
+        </li>
+      </ol>
     </div>
   );
 }

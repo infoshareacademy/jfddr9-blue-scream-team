@@ -41,7 +41,7 @@ export function Register() {
           alert(firebaseErrors[e.code]);
         });
     } else {
-      alert("Niepoprawne hasło");
+      alert("Incorrect password");
     }
   };
 
@@ -85,18 +85,18 @@ export function Register() {
   return (
     <>
     <form onSubmit={handleRegister}>
-      <input placeholder="Imię" name="name"></input>
-      <input placeholder="Nazwisko" name="lastName"></input>
+      <input placeholder="Name" name="name"></input>
+      <input placeholder="Lastname" name="lastName"></input>
       <input placeholder="E-mail" name="email" type="email"></input>
-      <input placeholder="Hasło" name="password" type="password"></input>
+      <input placeholder="Password" name="password" type="password"></input>
       <input
-        placeholder="Powtórz hasło"
+        placeholder="Repeat password"
         name="password1"
         type="password"
       ></input>
-      <button type="submit">Zarejestruj się</button>
+      <button type="submit">Register</button>
     </form>
-    <button className="firstbutton" onClick={navigateToLogin}>Go to Login</button>
+    <button className="firstbutton" onClick={navigateToLogin}>Login</button>
     </>
   );
 }

@@ -34,14 +34,13 @@ export function Search() {
 
   useEffect(() => {
     fetch(
-      `https://api.opentripmap.com/0.1/en/places/radius?radius=400&lon=${cordinate.lon}&lat=${cordinate.lat}&apikey=${apiKey}`
+      `https://api.opentripmap.com/0.1/en/places/radius?radius=30000&lon=${cordinate.lon}&lat=${cordinate.lat}&apikey=${apiKey}`
     )
       .then((response) => response.json())
       .then((data) => {
         const ids = data.features.map(({ id }) => id);
         setAttractions(ids.splice(0, 30));
         dispatch(addAttraction(ids.splice(0, 30)));
-
       });
   }, [cordinate.lat]);
   const handleClick = () => {
@@ -55,29 +54,14 @@ export function Search() {
       });
   };
 
-
-
-  const storedAttractionsCart = useSelector((state) => state.cartReducer.cart);
-
-  const handleChange = (e) => {
-    setCity(e.target.value);
-    if (!!storedAttractionsCart.length) {
-      alert("Zapisz najpierw atrakcje z bieżącego miasta");
-    }
-  };
-
   return (
     <SearchText>
       <input
-        onChange={handleChange}
+        onChange={(e) => setCity(e.target.value)}
         className="input"
-        placeholder="Wpisz nazwę miasta, które Cię interesuje"
+        placeholder="Search places here..."
       ></input>
-      <button
-        onClick={handleClick}
-        className="firstbutton"
-        disabled={!!storedAttractionsCart.length}
-      >
+      <button onClick={handleClick} className="firstbutton">
         Search
       </button>
     </SearchText>
