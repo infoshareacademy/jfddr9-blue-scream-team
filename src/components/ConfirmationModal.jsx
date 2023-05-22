@@ -12,7 +12,9 @@ function ConfirmationModal({ id, isAdd, attraction }) {
   const handleClose = () => setShow(false);
   const handleShow = () => {
     if (id) {
-      dispatch(isAdd ? removeFromCart(attraction) : addToCart(attraction));
+      dispatch(
+        isAdd ? removeFromCart(attraction) : addToCart({ attraction, id })
+      );
       setShow(true);
     }
   };

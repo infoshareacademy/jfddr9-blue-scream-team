@@ -8,12 +8,14 @@ import { useState } from "react";
 import { db } from "../api/firebase";
 import { addDoc, collection } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { Card } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 const cartRef = collection(db, "TravelPlans");
 
 export function Cart() {
   const auth = getAuth();
-
+  const navigate = useNavigate();
   const storedAttractions = useSelector((state) => state.cartReducer.cart);
 
   const [travelName, setTravelName] = useState("");
@@ -46,7 +48,13 @@ export function Cart() {
             {storedAttractions.map((item) => {
               return (
                 <Col className="colhome">
-                  <Tile id={item.id} />
+                  <Card body style={{ width: "400px" }}>
+                    {item.attraction.name}
+                    <img
+                      src={item.attraction.preview.source}
+                      onClick={() => navigate(`/attraction/${item.id}`)}
+                    />
+                  </Card>
                 </Col>
               );
             })}
