@@ -11,6 +11,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Card } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CityListButton from "../components/ListButton";
+import ConfirmationModal from "../components/ConfirmationModal";
 
 const cartRef = collection(db, "TravelPlans");
 
@@ -54,6 +55,11 @@ export function Cart() {
                     <img
                       src={item.attraction.preview.source}
                       onClick={() => navigate(`/attraction/${item.id}`)}
+                    />
+                    <ConfirmationModal
+                      id={item.id}
+                      isAdd={true}
+                      attraction={item.attraction}
                     />
                   </Card>
                 </Col>
