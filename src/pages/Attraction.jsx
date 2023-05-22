@@ -38,7 +38,9 @@ function Attraction() {
         src={attraction.preview.source}
         style={{ height: "100px", width: "100px" }}
       />
-      <div>{attraction.wikipedia_extracts.text}</div>
+      <div
+        dangerouslySetInnerHTML={{ __html: attraction.wikipedia_extracts.html }}
+      ></div>
       <SimpleMap lat={attraction.point.lat} lng={attraction.point.lon} />
     </div>
   );
