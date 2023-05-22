@@ -8,7 +8,7 @@ function AutoLayout() {
   const storedAttractions = useSelector(
     (state) => state.attractionsReducer.attractions
   );
-  console.log(storedAttractions);
+
   return (
     <Container className="container">
       <Row className="insiderow">

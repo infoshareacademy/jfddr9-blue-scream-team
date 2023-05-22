@@ -31,7 +31,7 @@ export function Register() {
       createUserWithEmailAndPassword(auth, email, password, name, lastName)
         .then((jwt) => {
           e.target.reset();
-          console.log(jwt);
+
           signOut(auth);
           sendEmail(email);
           navigate("/login");
@@ -79,24 +79,26 @@ export function Register() {
     //   });
   };
   const navigateToLogin = () => {
-    navigate("/login") 
-  }
+    navigate("/login");
+  };
 
   return (
     <>
-    <form onSubmit={handleRegister}>
-      <input placeholder="Name" name="name"></input>
-      <input placeholder="Lastname" name="lastName"></input>
-      <input placeholder="E-mail" name="email" type="email"></input>
-      <input placeholder="Password" name="password" type="password"></input>
-      <input
-        placeholder="Repeat password"
-        name="password1"
-        type="password"
-      ></input>
-      <button type="submit">Register</button>
-    </form>
-    <button className="firstbutton" onClick={navigateToLogin}>Login</button>
+      <form onSubmit={handleRegister}>
+        <input placeholder="Name" name="name"></input>
+        <input placeholder="Lastname" name="lastName"></input>
+        <input placeholder="E-mail" name="email" type="email"></input>
+        <input placeholder="Password" name="password" type="password"></input>
+        <input
+          placeholder="Repeat password"
+          name="password1"
+          type="password"
+        ></input>
+        <button type="submit">Register</button>
+      </form>
+      <button className="firstbutton" onClick={navigateToLogin}>
+        Login
+      </button>
     </>
   );
 }

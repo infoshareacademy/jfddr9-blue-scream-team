@@ -7,19 +7,23 @@ import { AttractionCard } from "./attractionCard";
 import ConfirmationModal from "./ConfirmationModal";
 import { useSelector } from "react-redux";
 
-function Tile({ id }) {
-  console.log(id);
+function Tile({ id, isButtonVisible = true }) {
   const [open, setOpen] = useState(false);
   const elementRef = useRef(null);
   const isInViewport = useIsInViewport(elementRef);
   const storedAttractions = useSelector((state) => state.cartReducer.cart);
-  console.log(storedAttractions);
+
   return (
     <>
-      <div style={{ minHeight: "150px" }} ref={elementRef}>
+      <div style={{ maxHeight: "600px" }} ref={elementRef}>
         <Collapse in={isInViewport} dimension="width">
-          <ConfirmationModal id={id} isAdd={storedAttractions.includes(id)} />
-          {isInViewport && <AttractionCard id={id} />}
+          {isInViewport && (
+            <AttractionCard
+              id={id}
+              isButtonVisible={isButtonVisible}
+              isAdd={storedAttractions.includes(id)}
+            />
+          )}
         </Collapse>
       </div>
     </>
