@@ -1,5 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
+import { useState } from "react";
 
 //to trzeba będzie ostylować
 const AnyReactComponent = ({ text }) => (
@@ -9,20 +10,18 @@ const AnyReactComponent = ({ text }) => (
 );
 
 export default function MultiMap({ coordinates }) {
-  const coordinates = {
+  const points = {
     lat: [],
     lng: [],
   };
 
-  locations.map((l) => {
-    coordinates.lat.push(Number(l.lat));
-    coordinates.lng.push(Number(l.lng));
+  coordinates.map((l) => {
+    points.lat.push(Number(l.lat));
+    points.lng.push(Number(l.lng));
   });
 
-  const averageLng =
-    (Math.max(...coordinates.lng) + Math.min(...coordinates.lng)) / 2;
-  const averageLat =
-    (Math.max(...coordinates.lat) + Math.min(...coordinates.lat)) / 2;
+  const averageLng = (Math.max(...points.lng) + Math.min(...points.lng)) / 2;
+  const averageLat = (Math.max(...points.lat) + Math.min(...points.lat)) / 2;
 
   const [userZoom, setUserZoom] = useState(8);
 
@@ -40,7 +39,6 @@ export default function MultiMap({ coordinates }) {
         defaultCenter={center}
         defaultZoom={11}
       >
-        {" "}
         {coordinates.map((item) => {
           return (
             <AnyReactComponent lat={item.lat} lng={item.lng} text="My Marker" />
