@@ -30,13 +30,18 @@ export function AttractionCard({ id, isButtonVisible, isAdd }) {
   }
   return (
     <>
-      <div id="example-collapse-text">
+      <div
+        id="example-collapse-text"
+        style={{ display: "flex", flexDirection: "column", height: "600px" }}
+      >
         {attraction && (
-          <Card body style={{ width: "400px" }}>
-            {attraction.name}
+          <Card body style={{ width: "400px", padding: "0" }}>
+            <Card.Header>{attraction.name}</Card.Header>
+
             <img
               src={attraction.preview.source}
               onClick={() => navigate(`/attraction/${id}`)}
+              style={{ height: "100px", width: "100px" }}
             />
           </Card>
         )}

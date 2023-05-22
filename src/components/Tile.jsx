@@ -15,7 +15,7 @@ function Tile({ id, isButtonVisible = true }) {
 
   return (
     <>
-      <div style={{ minHeight: "150px" }} ref={elementRef}>
+      <div style={{ maxHeight: "600px" }} ref={elementRef}>
         <Collapse in={isInViewport} dimension="width">
           {isInViewport && (
             <AttractionCard
