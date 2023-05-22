@@ -12,6 +12,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tile from "./Tile";
+import BookingForm from "./BookingForm";
 
 function MyJourney() {
   const citiesCollection = collection(db, "TravelPlans");
@@ -43,6 +44,7 @@ function MyJourney() {
   return (
     <div>
       <h1>MyJourney</h1>
+      <BookingForm />
       <Container className="container">
         <Row className="insiderow">
           {city.attraction.map((id) => {

@@ -4,15 +4,18 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/cartSlice";
 
-function ConfirmationModal({ id, isAdd }) {
-  const dispatch=useDispatch()
+function ConfirmationModal({ id, isAdd, attraction }) {
+  const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const buttonText = !isAdd ? "Add to list" : "Remove from list";
   const bodyText = !isAdd ? "Added to list" : "Removed from list";
   const handleClose = () => setShow(false);
   const handleShow = () => {
-    dispatch(addToCart(id))
-    setShow(true)};
+    if (id) {
+      dispatch(isAdd ? removeFromCart(attraction) : addToCart(attraction));
+      setShow(true);
+    }
+  };
 
   return (
     <>

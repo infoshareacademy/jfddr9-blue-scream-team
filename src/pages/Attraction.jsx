@@ -19,7 +19,6 @@ function Attraction() {
       });
   }, []);
 
-  console.log(attraction);
   if (!attraction) {
     return <div>Loading....</div>;
   }

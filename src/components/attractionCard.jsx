@@ -7,8 +7,9 @@ import { addToCart } from "../store/cartSlice";
 const apiKey = "5ae2e3f221c38a28845f05b6d4abedb7255e1841191e88000d07bd49";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import ConfirmationModal from "./ConfirmationModal";
 
-export function AttractionCard({ id }) {
+export function AttractionCard({ id, isButtonVisible, isAdd }) {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -23,21 +24,24 @@ export function AttractionCard({ id }) {
         setAttraction(data);
       });
   }, []);
-  console.log(attraction);
+
   if (!attraction || !attraction.preview || !attraction.preview.source) {
     return null;
   }
   return (
     <>
-      <div
-        id="example-collapse-text"
-        onClick={() => navigate(`/attraction/${id}`)}
-      >
+      <div id="example-collapse-text">
         {attraction && (
           <Card body style={{ width: "400px" }}>
             {attraction.name}
-            <img src={attraction.preview.source} />
+            <img
+              src={attraction.preview.source}
+              onClick={() => navigate(`/attraction/${id}`)}
+            />
           </Card>
+        )}
+        {isButtonVisible && (
+          <ConfirmationModal id={id} isAdd={isAdd} attraction={attraction} />
         )}
       </div>
     </>

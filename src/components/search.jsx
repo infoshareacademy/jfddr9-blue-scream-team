@@ -41,7 +41,6 @@ export function Search() {
         const ids = data.features.map(({ id }) => id);
         setAttractions(ids.splice(0, 30));
         dispatch(addAttraction(ids.splice(0, 30)));
-        console.log(attractions);
       });
   }, [cordinate.lat]);
   const handleClick = () => {
@@ -54,31 +53,6 @@ export function Search() {
         setIndex(1);
       });
   };
-
-  // 
-  // const fetchAtraction = () => {
-  //   fetch(
-  //     `https://api.opentripmap.com/0.1/en/places/radius?radius=30000&lon=${cordinate.lon}&lat=${cordinate.lat}&apikey=${apiKey}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       setAttractions(data.features.map(({ id }) => id));
-  //       console.log(attractions);
-  //     });
-  // };
-
-  // const fetchFullAttraction = () => {
-  //   attractions.map((id) => {
-  //     fetch(
-  //       `https://api.opentripmap.com/0.1/en/places/xid/${id}?apikey=${apiKey}`
-  //     )
-  //       .then((response) => response.json())
-  //       .then((data) => {
-  //         dispatch(addAttraction(data));
-  //       });
-  //   });
-  // };
 
   return (
     <SearchText>
