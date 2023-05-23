@@ -33,8 +33,8 @@ const Contener = styled.div`
   background: linear-gradient(
     to top,
     hsl(158, 50%, 70%) 0%,
-    hsl(158, 50%, 70%) 75%,
-    white 75%,
+    hsl(158, 50%, 70%) 70%,
+    white 70%,
     white 100%
   );
   font-size: 36px;
