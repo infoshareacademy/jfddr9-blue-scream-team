@@ -66,6 +66,7 @@ function MyJourney() {
   console.log(city);
   return (
     <div>
+      <button onClick={() => history.back()}>Wróć</button>
       <h1>MyJourney</h1>
       <Container className="container">
         <Row className="insiderow">
