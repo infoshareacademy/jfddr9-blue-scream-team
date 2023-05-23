@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { useNavigate, useHref } from "react-router-dom";
 import { SignInButton } from "./SignInButton";
 import { RegisterButton } from "./RegisterButton";
-import { Header } from "./header";
+import { Header } from "./Header";
 
 export function AuthButtons() {
   const href = useHref();
