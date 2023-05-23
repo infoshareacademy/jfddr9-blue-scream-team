@@ -51,14 +51,14 @@ body {
   border: 10px;
   gap: 10px;
   border-radius: 15px;
+  overflow-y: scroll;
+  height: 500px;
 }
 
 .insiderow {
   padding: 10px;
   gap: 20px;
   flex-wrap: wrap;
-  height: 500px;
-  overflow-y: scroll;
   border-radius: 50px;
 }
 
@@ -123,7 +123,6 @@ li {
   height: 270px;
   width: auto;
   overflow: hidden;
-  margin-bottom: 100px;
 }
 .buttons {
   align-items: center;
