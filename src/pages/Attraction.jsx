@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 const apiKey = "5ae2e3f221c38a28845f05b6d4abedb7255e1841191e88000d07bd49";
 import SimpleMap from "../components/SimpleMap";
+import { JourneySelect } from "../components/JourneySelect";
 
 function Attraction() {
   const navigate = useNavigate();
@@ -27,7 +28,8 @@ function Attraction() {
   console.log(attraction);
   return (
     <div>
-      <div>Nazwa atrakcji</div>
+      <JourneySelect attraction={attraction}/>
+      <button onClick={() => history.back()}>Wróć</button>
       <div>{attraction.name}</div>
       <div>
         {attraction.address.pedestrian + " " + attraction.address.house_number}
@@ -46,7 +48,13 @@ function Attraction() {
           }}
         ></div>
       )}
-      {attraction.url && <a href={attraction.url}>Dowiedz się więcej</a>}
+      {attraction.url && (
+        <div>
+          <a href={attraction.url}>
+            <button>Dowiedz się więcej</button>
+          </a>
+        </div>
+      )}
       <SimpleMap lat={attraction.point.lat} lng={attraction.point.lon} />
     </div>
   );

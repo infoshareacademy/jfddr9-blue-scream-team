@@ -39,7 +39,7 @@ function CityList() {
 
   return (
     <div>
-      <h1>Moja lista miast</h1>
+      <h1>List of places</h1>
       <div>
         <ol style={{ listStyle: "decimal" }}>
           {cityList.map((city) => (
@@ -63,10 +63,7 @@ function CityList() {
         </ol>
       </div>
       <ol>
-        <h1>List of places</h1>
         <li>
-          <p>Tu bedzie nazwa maista- pobrana?</p>
-          <button type="submit">Remove</button>
           <HomeButton />
         </li>
       </ol>

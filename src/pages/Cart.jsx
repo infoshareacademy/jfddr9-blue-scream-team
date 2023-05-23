@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -12,10 +12,12 @@ import { Card } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import CityListButton from "../components/ListButton";
 import ConfirmationModal from "../components/ConfirmationModal";
+import { clearCart } from "../store/cartSlice";
 
 const cartRef = collection(db, "TravelPlans");
 
 export function Cart() {
+  const dispatch = useDispatch();
   const auth = getAuth();
   const navigate = useNavigate();
   const storedAttractions = useSelector((state) => state.cartReducer.cart);
@@ -34,6 +36,7 @@ export function Cart() {
     addDoc(cartRef, travelData)
       .then(() => {
         alert("Dodano do bazy podróży");
+        dispatch(clearCart());
         setTravelName("");
       })
       .catch((error) => {
