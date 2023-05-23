@@ -35,7 +35,7 @@ export function Cart() {
 
     addDoc(cartRef, travelData)
       .then(() => {
-        alert("Dodano do bazy podróży");
+        alert("Added to travel list");
         dispatch(clearCart());
         setTravelName("");
       })
