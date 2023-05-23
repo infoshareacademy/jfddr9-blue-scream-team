@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home";
-import { Header } from "./components/Auth/Header";
+import { Header } from "./components/Auth/header.jsx";
 import { Search } from "./components/search";
 import { Main } from "./components/main";
 import Footer from "./components/footer";
@@ -28,6 +28,8 @@ import CityList from "./pages/CityList";
 import Attraction from "./pages/Attraction";
 import MyJourney from "./components/MyJourney";
 import { Header as MainHeader } from "./pages/header";
+import samolot from "../src/images/samolot.png";
+import { PictureGrid } from "./components/picturegrid";
 
 const Contener = styled.div`
   background-color: hsl(158, 50%, 70%);
@@ -44,6 +46,29 @@ function App() {
     <>
       <Header />
       <Contener>
+        {/* <div className="gridpictures">
+  <div className="grid-container">
+    <div class="grid-item">
+      <img src={samolot} alt="Zdjęcie 1"/>
+    </div>
+    <div className="grid-item">
+      <img src="zdjecie2.jpg" alt="Zdjęcie 2"/>
+    </div>
+    <div className="grid-item">
+      <img src="zdjecie3.jpg" alt="Zdjęcie 3"/>
+    </div>
+    <div className="grid-item">
+      <img src="zdjecie4.jpg" alt="Zdjęcie 4"/>
+    </div>
+    <div className="grid-item">
+      <img src="zdjecie5.jpg" alt="Zdjęcie 5"/>
+    </div>
+    <div className="grid-item">
+      <img src="zdjecie6.jpg" alt="Zdjęcie 6"/>
+    </div>
+  </div>
+</div> */}
+
         {/* <AuthButtons /> */}
 
         {/* <ConfirmationModal /> */}
@@ -56,6 +81,7 @@ function App() {
           <Route path={"/cityList"} element={<CityList />} />
           <Route path={"/attraction/:id"} element={<Attraction />} />
           <Route path={"/journey/:id"} element={<MyJourney />} />
+          <Route path={"/"} element={<PictureGrid />} />
         </Routes>
       </Contener>
       <Footer />

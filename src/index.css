@@ -118,9 +118,11 @@ li {
 .headerbuttons {
   display: flex;
   flex-direction: row;
+  background-color: hsl(159, 100%, 95%);
+  border-radius: 30px;
 }
 .logo {
-  height: 270px;
+  height: 200px;
   width: auto;
   overflow: hidden;
 }
@@ -130,15 +132,63 @@ li {
   margin-top: 60px;
 }
 
-/* .background1 {
-  border-radius: 20px;
-  padding: 0;
-  margin: 0;
-  width: 100%;
-} */
-
 .registerpage {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.maintitle {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  font-size: 50px;
+  font-weight: bold;
+  color: hsl(224, 49%, 27%);
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+
+.row-img {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  justify-content: center;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin-top: 80px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column-img {
+  -ms-flex: 25%; /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column-img img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  border-radius: 15px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column-img {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column-img {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
 }

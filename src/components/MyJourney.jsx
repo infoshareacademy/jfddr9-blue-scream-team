@@ -66,7 +66,9 @@ function MyJourney() {
   console.log(city);
   return (
     <div>
-      <button onClick={() => history.back()}>Wróć</button>
+      <button className="firstbutton" onClick={() => history.back()}>
+        Back
+      </button>
       <h1>MyJourney</h1>
       <Container className="container">
         <Row className="insiderow">
@@ -80,7 +82,7 @@ function MyJourney() {
                     onClick={() => navigate(`/attraction/${item.id}`)}
                   />
                   <button onClick={() => handleUpdate(item.id)}>
-                    Usuń z listy
+                    Remove from list
                   </button>
                 </Card>
               </Col>

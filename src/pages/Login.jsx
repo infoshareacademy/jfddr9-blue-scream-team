@@ -48,9 +48,9 @@ export const Login = () => {
             <button className="firstbutton" type="submit">
               Login
             </button>
-            <button className="firstbutton" onClick={navigateToRegistration}>
+            {/* <button className="firstbutton" onClick={navigateToRegistration}>
               Register
-            </button>
+            </button> */}
           </div>
         </div>
       </form>

@@ -52,6 +52,8 @@ export function Header() {
   return (
     <div className="headerbuttons">
       <img className="logo" src={logo}></img>
+      <p className="maintitle">Your next travel starts here.</p>
+      {/* <p className="smalltitle">Login or register now.</p> */}
 
       <div className="buttons">
         {isAuth ? (
