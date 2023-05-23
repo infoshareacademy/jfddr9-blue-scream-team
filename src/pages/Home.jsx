@@ -4,11 +4,12 @@ import AutoLayout from "./cards";
 import Footer from "../components/footer";
 import CartButton from "../components/CartButton";
 import Background from "./background";
+
 export function Home() {
   return (
     <>
       {/* <OpenTripMapExample /> */}
-      <Background />
+      {/* <Background /> */}
       <Search />
       <AutoLayout />
       <CartButton />

@@ -6,7 +6,6 @@ import {
   sendSignInLinkToEmail,
   getAuth,
 } from "firebase/auth";
-
 import { firebaseErrors } from "../components/utils/firebaseErrors";
 import { useState } from "react";
 import { db } from "../api/firebase";
@@ -20,18 +19,15 @@ import {
 } from "firebase/firestore";
 import { getPassword } from "../components/utils/getPassword";
 import { useNavigate } from "react-router-dom";
-
 export function Register() {
   const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
-
     if (getPassword(e)) {
       const { name, lastName, email, password } = getFormData(e);
       createUserWithEmailAndPassword(auth, email, password, name, lastName)
         .then((jwt) => {
           e.target.reset();
-
           signOut(auth);
           sendEmail(email);
           navigate("/login");
@@ -44,7 +40,6 @@ export function Register() {
       alert("Incorrect password");
     }
   };
-
   const actionCodeSettings = {
     // URL you want to redirect back to. The domain (www.example.com) for this
     // URL must be in the authorized domains list in the Firebase Console.
@@ -61,7 +56,6 @@ export function Register() {
     },
     dynamicLinkDomain: "example.page.link",
   };
-
   const auth = getAuth();
   const sendEmail = (email) => {
     // sendSignInLinkToEmail(auth, email, actionCodeSettings)
@@ -81,24 +75,26 @@ export function Register() {
   const navigateToLogin = () => {
     navigate("/login");
   };
-
   return (
-    <>
+    <div className="registerpage">
       <form onSubmit={handleRegister}>
-        <input placeholder="Name" name="name"></input>
-        <input placeholder="Lastname" name="lastName"></input>
-        <input placeholder="E-mail" name="email" type="email"></input>
-        <input placeholder="Password" name="password" type="password"></input>
-        <input
+        <input className="input" placeholder="Name" name="name"></input>
+        <input className="input" placeholder="Lastname" name="lastName"></input>
+        <input className="input" placeholder="E-mail" name="email" type="email"></input>
+        <input className="input" placeholder="Password" name="password" type="password"></input>
+        <input className="input"
           placeholder="Repeat password"
           name="password1"
           type="password"
         ></input>
-        <button type="submit">Register</button>
-      </form>
-      <button className="firstbutton" onClick={navigateToLogin}>
+        
+        <button className="firstbutton"  type="submit">Register</button>
+        <button className="firstbutton" onClick={navigateToLogin}>
         Login
       </button>
-    </>
+      </form>
+      
+    </div>
+  
   );
 }
