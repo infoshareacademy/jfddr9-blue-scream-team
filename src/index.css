@@ -212,7 +212,6 @@ li {
 .btn-primary {
   background-color: hsl(224, 49%, 27%);
   color: rgb(255, 255, 255);
-  height: 35px;
   width: 120px;
   border-radius: 10px;
   font-size: 1.2rem;
@@ -220,4 +219,12 @@ li {
   margin-left: 30px;
   align-items: center;
   justify-content: center;
+}
+
+.card {
+  all: initial;
+}
+
+img {
+  border-radius: 20px;
 }
