@@ -46,29 +46,6 @@ function App() {
     <>
       <Header />
       <Contener>
-        {/* <div className="gridpictures">
-  <div className="grid-container">
-    <div class="grid-item">
-      <img src={samolot} alt="Zdjęcie 1"/>
-    </div>
-    <div className="grid-item">
-      <img src="zdjecie2.jpg" alt="Zdjęcie 2"/>
-    </div>
-    <div className="grid-item">
-      <img src="zdjecie3.jpg" alt="Zdjęcie 3"/>
-    </div>
-    <div className="grid-item">
-      <img src="zdjecie4.jpg" alt="Zdjęcie 4"/>
-    </div>
-    <div className="grid-item">
-      <img src="zdjecie5.jpg" alt="Zdjęcie 5"/>
-    </div>
-    <div className="grid-item">
-      <img src="zdjecie6.jpg" alt="Zdjęcie 6"/>
-    </div>
-  </div>
-</div> */}
-
         {/* <AuthButtons /> */}
 
         {/* <ConfirmationModal /> */}

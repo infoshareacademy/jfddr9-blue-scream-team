@@ -41,7 +41,7 @@ export function AttractionCard({ id, isButtonVisible, isAdd }) {
             <img
               src={attraction.preview.source}
               onClick={() => navigate(`/attraction/${id}`)}
-              style={{ height: "100px", width: "100px" }}
+              style={{ height: "400px", width: "400px" }}
             />
           </Card>
         )}

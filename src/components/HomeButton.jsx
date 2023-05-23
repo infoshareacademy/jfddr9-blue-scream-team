@@ -9,7 +9,7 @@ export function HomeButton() {
 
   return (
     <button className="firstbutton" type="submit" onClick={navigateToHome}>
-      Go to Search
+      Search
     </button>
   );
 }
