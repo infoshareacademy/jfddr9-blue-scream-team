@@ -19,6 +19,7 @@ import {
 } from "firebase/firestore";
 import { Register } from "./pages/Register";
 import { Login } from "./pages/Login";
+
 import { AuthButtons } from "./components/Auth/AuthButtons";
 import ConfirmationModal from "./components/ConfirmationModal";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -28,13 +29,13 @@ import Attraction from "./pages/Attraction";
 import MyJourney from "./components/MyJourney";
 
 const Contener = styled.div`
-background: linear-gradient(
-  to top,
-  hsl(158, 50%, 70%) 0%,
-  hsl(158, 50%, 70%) 79%,
-  white 79%,
-  white 100%
-);
+  background: linear-gradient(
+    to top,
+    hsl(158, 50%, 70%) 0%,
+    hsl(158, 50%, 70%) 79%,
+    white 79%,
+    white 100%
+  );
   font-size: 36px;
   height: 100%;
   border-radius: 10px;
@@ -45,12 +46,11 @@ function App() {
   const navigate = useNavigate();
   return (
     <>
-    <Contener>
-      <AuthButtons />
+      <Contener>
+        <AuthButtons />
 
-      {/* <ConfirmationModal /> */}
+        {/* <ConfirmationModal /> */}
 
-      
         <Routes>
           <Route path={"/home"} element={<Home></Home>} />
           <Route path={"/login"} element={<Login />} />

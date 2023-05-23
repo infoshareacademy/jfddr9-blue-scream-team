@@ -21,7 +21,9 @@ function Tile({ id, isButtonVisible = true }) {
             <AttractionCard
               id={id}
               isButtonVisible={isButtonVisible}
-              isAdd={storedAttractions.includes(id)}
+              isAdd={storedAttractions.find((item) => {
+                return item.id == id;
+              })}
             />
           )}
         </Collapse>

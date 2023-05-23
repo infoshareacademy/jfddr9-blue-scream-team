@@ -1,10 +1,11 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 const apiKey = "5ae2e3f221c38a28845f05b6d4abedb7255e1841191e88000d07bd49";
 import SimpleMap from "../components/SimpleMap";
 
 function Attraction() {
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [attraction, setAttraction] = useState(null);
@@ -38,7 +39,14 @@ function Attraction() {
         src={attraction.preview.source}
         style={{ height: "100px", width: "100px" }}
       />
-      <div>{attraction.wikipedia_extracts.text}</div>
+      {attraction.wikipedia_extracts && (
+        <div
+          dangerouslySetInnerHTML={{
+            __html: attraction.wikipedia_extracts.html,
+          }}
+        ></div>
+      )}
+      {attraction.url && <a href={attraction.url}>Dowiedz się więcej</a>}
       <SimpleMap lat={attraction.point.lat} lng={attraction.point.lon} />
     </div>
   );

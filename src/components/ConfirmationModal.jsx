@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../store/cartSlice";
+import { addToCart, removeFromCart } from "../store/cartSlice";
 
 function ConfirmationModal({ id, isAdd, attraction }) {
   const dispatch = useDispatch();
@@ -12,9 +12,7 @@ function ConfirmationModal({ id, isAdd, attraction }) {
   const handleClose = () => setShow(false);
   const handleShow = () => {
     if (id) {
-      dispatch(
-        isAdd ? removeFromCart(attraction) : addToCart({ attraction, id })
-      );
+      dispatch(isAdd ? removeFromCart(id) : addToCart({ attraction, id }));
       setShow(true);
     }
   };
