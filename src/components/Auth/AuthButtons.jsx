@@ -19,6 +19,4 @@ export function AuthButtons() {
       </>
     );
   }
-
-  return <Header />;
 }

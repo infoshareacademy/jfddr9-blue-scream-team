@@ -27,13 +27,14 @@ import { Cart } from "./pages/Cart";
 import CityList from "./pages/CityList";
 import Attraction from "./pages/Attraction";
 import MyJourney from "./components/MyJourney";
+import { Header as MainHeader } from "./pages/header";
 
 const Contener = styled.div`
   background: linear-gradient(
     to top,
     hsl(158, 50%, 70%) 0%,
-    hsl(158, 50%, 70%) 79%,
-    white 79%,
+    hsl(158, 50%, 70%) 75%,
+    white 75%,
     white 100%
   );
   font-size: 36px;
@@ -48,6 +49,7 @@ function App() {
     <>
       <Contener>
         <AuthButtons />
+        <Header />
 
         {/* <ConfirmationModal /> */}
 
