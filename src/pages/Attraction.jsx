@@ -28,8 +28,10 @@ function Attraction() {
   console.log(attraction);
   return (
     <div>
-      <JourneySelect attraction={attraction}/>
-      <button onClick={() => history.back()}>Wróć</button>
+      <JourneySelect attraction={attraction} />
+      <button className="firstbutton" onClick={() => history.back()}>
+        Back
+      </button>
       <div>{attraction.name}</div>
       <div>
         {attraction.address.pedestrian + " " + attraction.address.house_number}

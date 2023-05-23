@@ -46,7 +46,7 @@ export function Cart() {
   console.log(storedAttractions);
   return (
     <div className="traveltitle">
-      <h1>MY TRAVEL LIST</h1>
+      <h1 className="travellist">My travel list</h1>
       <div>
         <Container className="container">
           <Row className="insiderow">

@@ -80,21 +80,32 @@ export function Register() {
       <form onSubmit={handleRegister}>
         <input className="input" placeholder="Name" name="name"></input>
         <input className="input" placeholder="Lastname" name="lastName"></input>
-        <input className="input" placeholder="E-mail" name="email" type="email"></input>
-        <input className="input" placeholder="Password" name="password" type="password"></input>
-        <input className="input"
+        <input
+          className="input"
+          placeholder="E-mail"
+          name="email"
+          type="email"
+        ></input>
+        <input
+          className="input"
+          placeholder="Password"
+          name="password"
+          type="password"
+        ></input>
+        <input
+          className="input"
           placeholder="Repeat password"
           name="password1"
           type="password"
         ></input>
-        
-        <button className="firstbutton"  type="submit">Register</button>
-        <button className="firstbutton" onClick={navigateToLogin}>
+
+        <button className="firstbutton" type="submit">
+          Register
+        </button>
+        {/* <button className="firstbutton" onClick={navigateToLogin}>
         Login
-      </button>
+      </button> */}
       </form>
-      
     </div>
-  
   );
 }

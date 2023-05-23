@@ -54,9 +54,9 @@ function CityList() {
               <div>
                 <p>{city.travelName}</p>
                 <button onClick={() => navigate(`/journey/${city.id}`)}>
-                  Zobacz podróż
+                  View
                 </button>
-                <button onClick={() => handleDelete(city.id)}>Usuń</button>
+                <button onClick={() => handleDelete(city.id)}>Remove</button>
               </div>
             </li>
           ))}

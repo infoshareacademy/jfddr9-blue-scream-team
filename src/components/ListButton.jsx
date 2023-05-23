@@ -9,7 +9,7 @@ export function CityListButton() {
 
   return (
     <button className="firstbutton" type="submit" onClick={navigateToCityList}>
-      Go to Places
+      Places
     </button>
   );
 }

@@ -31,6 +31,9 @@ export function Header() {
   const [isAuth, setIsAuth] = useState(null);
   const [user, setUser] = useState(null);
   const [role, setRole] = useState(null); // 'admin' | 'user' | 'unauthorized' | null
+  const ToHome = () => {
+    navigate("/");
+  };
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
@@ -51,7 +54,13 @@ export function Header() {
   };
   return (
     <div className="headerbuttons">
-      <img className="logo" src={logo}></img>
+      <img
+        onClick={ToHome}
+        className="logo"
+        style={{ cursor: "pointer" }}
+        src={logo}
+      ></img>
+      <p className="maintitle">Your next travel starts here.</p>
 
       <div className="buttons">
         {isAuth ? (

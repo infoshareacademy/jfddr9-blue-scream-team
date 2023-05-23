@@ -10,6 +10,7 @@ export function Home() {
     <>
       {/* <OpenTripMapExample /> */}
       {/* <Background /> */}
+
       <Search />
       <AutoLayout />
       <CartButton />
