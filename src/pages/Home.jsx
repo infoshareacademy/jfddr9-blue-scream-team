@@ -13,7 +13,6 @@ export function Home() {
       <Search />
       <AutoLayout />
       <CartButton />
-      <Footer />
     </>
   );
 }

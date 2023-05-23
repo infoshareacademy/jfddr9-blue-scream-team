@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import { Header } from "./components/Auth/Header";
 import { Search } from "./components/search";
 import { Main } from "./components/main";
-// import { Footer } from "./components/footer";
+import Footer from "./components/footer";
 import { useNavigate } from "react-router-dom";
 import { db } from "./api/firebase";
 import {
@@ -30,16 +30,11 @@ import MyJourney from "./components/MyJourney";
 import { Header as MainHeader } from "./pages/header";
 
 const Contener = styled.div`
-  background: linear-gradient(
-    to top,
-    hsl(158, 50%, 70%) 0%,
-    hsl(158, 50%, 70%) 70%,
-    white 70%,
-    white 100%
-  );
+  background-color: hsl(158, 50%, 70%);
   font-size: 36px;
   height: 100%;
-  border-radius: 10px;
+  border-radius: 30px;
+  padding: 30px;
 `;
 
 function App() {
@@ -47,9 +42,9 @@ function App() {
   const navigate = useNavigate();
   return (
     <>
+      <Header />
       <Contener>
         {/* <AuthButtons /> */}
-        <Header />
 
         {/* <ConfirmationModal /> */}
 
@@ -63,6 +58,7 @@ function App() {
           <Route path={"/journey/:id"} element={<MyJourney />} />
         </Routes>
       </Contener>
+      <Footer />
     </>
   );
 }
