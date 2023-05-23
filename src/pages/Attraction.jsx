@@ -27,7 +27,9 @@ function Attraction() {
   console.log(attraction);
   return (
     <div>
-      <div>Nazwa atrakcji</div>
+      <button onClick={() => navigate("/journey/:id")}>
+        Wróć do planu podróży
+      </button>
       <div>{attraction.name}</div>
       <div>
         {attraction.address.pedestrian + " " + attraction.address.house_number}
@@ -46,7 +48,13 @@ function Attraction() {
           }}
         ></div>
       )}
-      {attraction.url && <a href={attraction.url}>Dowiedz się więcej</a>}
+      {attraction.url && (
+        <div>
+          <a href={attraction.url}>
+            <button>Dowiedz się więcej</button>
+          </a>
+        </div>
+      )}
       <SimpleMap lat={attraction.point.lat} lng={attraction.point.lon} />
     </div>
   );

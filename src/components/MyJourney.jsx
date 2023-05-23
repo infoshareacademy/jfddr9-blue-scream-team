@@ -6,6 +6,8 @@ import {
   collection,
   getDocs,
   onSnapshot,
+  updateDoc,
+  doc,
 } from "firebase/firestore";
 import { db } from "../api/firebase";
 import Container from "react-bootstrap/Container";
@@ -51,10 +53,20 @@ function MyJourney() {
     };
   });
   console.log(coordinates);
+
+  const handleUpdate = async (id) => {
+    const docRef = doc(db, "TravelPlans", city.id);
+    await updateDoc(docRef, {
+      ...city,
+      attraction: city.attraction.filter((item) => item.id !== id),
+    });
+
+    // setDraftId(null);
+  };
+  console.log(city);
   return (
     <div>
       <h1>MyJourney</h1>
-      <BookingForm />
       <Container className="container">
         <Row className="insiderow">
           {city.attraction.map((item) => {
@@ -66,6 +78,9 @@ function MyJourney() {
                     src={item.attraction.preview.source}
                     onClick={() => navigate(`/attraction/${item.id}`)}
                   />
+                  <button onClick={() => handleUpdate(item.id)}>
+                    Usuń z listy
+                  </button>
                 </Card>
               </Col>
             );
