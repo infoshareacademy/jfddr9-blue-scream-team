@@ -94,8 +94,6 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20%;
-  height: 100vh;
 }
 
 .loginwindow1 {
@@ -142,9 +140,6 @@ li {
 
 .registerpage {
   display: flex;
-  margin-top: 20%;
   align-items: center;
   justify-content: center;
-  margin: auto;
-  height: 100vh;
 }
