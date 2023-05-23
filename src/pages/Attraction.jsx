@@ -27,9 +27,7 @@ function Attraction() {
   console.log(attraction);
   return (
     <div>
-      <button onClick={() => navigate("/journey/:id")}>
-        Wróć do planu podróży
-      </button>
+      <button onClick={() => history.back()}>Wróć do planu podróży</button>
       <div>{attraction.name}</div>
       <div>
         {attraction.address.pedestrian + " " + attraction.address.house_number}
