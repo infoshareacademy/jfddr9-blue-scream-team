@@ -6,6 +6,7 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { AboutButton } from "./AboutButton";
 
 const Footer = () => {
   const socialMediaLinks = [
@@ -28,6 +29,7 @@ const Footer = () => {
 
   return (
     <footer>
+      <AboutButton />
       <ul>
         {socialMediaLinks.map((link, index) => (
           <li key={index}>
