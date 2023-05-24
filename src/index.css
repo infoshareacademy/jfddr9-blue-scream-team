@@ -295,3 +295,19 @@ h2 {
 .textOnRight {
   text-align: left;
 }
+.modal-header {
+  background-color: #8cd9bd;
+  text-align: center;
+  justify-content: center;
+}
+.modal-body {
+  background-color: white;
+  text-align: center;
+}
+.modal-footer {
+  background-color: #8cd9bd;
+  justify-content: center;
+}
+.modal-button {
+  background-color: hsl(224, 49%, 27%);
+}

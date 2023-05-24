@@ -32,12 +32,19 @@ function ConfirmationModal({ id, isAdd, attraction }) {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header
+          // closeButton (odkomentuj a będzie działać)
+          className="modal-header"
+        >
           <Modal.Title>{titleText}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{bodyText}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Body className="modal-body">{bodyText}</Modal.Body>
+        <Modal.Footer className="modal-footer">
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            className="modal-button"
+          >
             OK!
           </Button>
         </Modal.Footer>
