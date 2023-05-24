@@ -53,10 +53,18 @@ function CityList() {
             >
               <div>
                 <p>{city.travelName}</p>
-                <button onClick={() => navigate(`/journey/${city.id}`)}>
+                <button
+                  className="firstbutton"
+                  onClick={() => navigate(`/journey/${city.id}`)}
+                >
                   View
                 </button>
-                <button onClick={() => handleDelete(city.id)}>Remove</button>
+                <button
+                  className="firstbutton"
+                  onClick={() => handleDelete(city.id)}
+                >
+                  Remove
+                </button>
               </div>
             </li>
           ))}
