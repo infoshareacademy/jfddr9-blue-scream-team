@@ -67,9 +67,9 @@ export function Header() {
         src={logo}
       ></img>
       <div className="headerexplore">
-        <p className="maintitle">Your next travel starts here.</p>
+        <p className="maintitle">Bored? Plan your travel with us.</p>
         <button onClick={GoHome} className="explorebutton">
-          Explore
+          Start your journey here
         </button>
       </div>
 

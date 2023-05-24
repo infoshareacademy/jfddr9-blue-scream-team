@@ -10,8 +10,8 @@ function ConfirmationModal({ id, isAdd, attraction }) {
   const [show, setShow] = useState(false);
   const buttonText = !isAdd ? "Add to list" : "Remove from list";
   const bodyText = isAdd
-    ? "Udało Ci się dodać do listy. Aby zobczyć plan podróży przejdź do planu podróży"
-    : "Removed from list";
+    ? "Go to travel list to see all your attractions."
+    : "Removed from list.";
   const titleText = isAdd ? "Added to list" : "Removed from list";
   const handleClose = () => setShow(false);
   const handleShow = () => {
