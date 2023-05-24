@@ -23,7 +23,11 @@ function ConfirmationModal({ id, isAdd, attraction }) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} style={{ zIndex: 999 }}>
+      <Button
+        variant="primary"
+        onClick={handleShow}
+        style={{ zIndex: 999, width: "100%", marginLeft: "0" }}
+      >
         {buttonText}
       </Button>
 
