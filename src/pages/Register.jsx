@@ -19,6 +19,7 @@ import {
 } from "firebase/firestore";
 import { getPassword } from "../components/utils/getPassword";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 export function Register() {
   const navigate = useNavigate();
   const handleRegister = (e) => {
@@ -34,10 +35,10 @@ export function Register() {
         })
         .catch((e) => {
           console.dir(e);
-          alert(firebaseErrors[e.code]);
+          toast(firebaseErrors[e.code], { type: "error!" });
         });
     } else {
-      alert("Incorrect password");
+      toast("Incorrect password", { type: "error!" });
     }
   };
   const actionCodeSettings = {

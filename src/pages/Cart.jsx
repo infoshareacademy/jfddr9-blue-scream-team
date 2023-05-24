@@ -13,6 +13,7 @@ import { useNavigate } from "react-router-dom";
 import CityListButton from "../components/ListButton";
 import ConfirmationModal from "../components/ConfirmationModal";
 import { clearCart } from "../store/cartSlice";
+import { toast } from "react-toastify";
 
 const cartRef = collection(db, "TravelPlans");
 
@@ -35,7 +36,7 @@ export function Cart() {
 
     addDoc(cartRef, travelData)
       .then(() => {
-        alert("Added to travel list");
+        toast("Added to travel list");
         dispatch(clearCart());
         setTravelName("");
       })
