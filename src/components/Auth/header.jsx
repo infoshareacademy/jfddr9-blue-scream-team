@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useMatch, useLocation } from "react-router-dom";
 import { auth } from "../../api/firebase";
 import {
   createUserWithEmailAndPassword,
@@ -27,6 +27,10 @@ const HeaderText = styled.div`
 `;
 
 export function Header() {
+  const location = useLocation();
+  const match = useMatch("");
+  // const [{ route }] = matchRoutes(routes, location);
+  console.log(location);
   const navigate = useNavigate();
   const [isAuth, setIsAuth] = useState(null);
   const [user, setUser] = useState(null);
@@ -76,8 +80,8 @@ export function Header() {
           </button>
         ) : (
           <>
-            <RegisterButton />
-            <SignInButton />
+            {location.pathname !== "/register" && <RegisterButton />}
+            {location.pathname !== "/login" && <SignInButton />}
           </>
         )}
       </div>
