@@ -4,32 +4,17 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import Home from "./pages/Home";
 import { Header } from "./components/Auth/header.jsx";
-import { Search } from "./components/search";
-import { Main } from "./components/main";
 import Footer from "./components/footer";
 import { useNavigate } from "react-router-dom";
-import { db } from "./api/firebase";
-import {
-  addDoc,
-  collection,
-  deleteDoc,
-  doc,
-  onSnapshot,
-  updateDoc,
-} from "firebase/firestore";
 import { Register } from "./pages/Register";
 import { Login } from "./pages/Login";
-
-import { AuthButtons } from "./components/Auth/AuthButtons";
-import ConfirmationModal from "./components/ConfirmationModal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Cart } from "./pages/Cart";
 import CityList from "./pages/CityList";
 import Attraction from "./pages/Attraction";
 import MyJourney from "./components/MyJourney";
-import { Header as MainHeader } from "./pages/header";
-import samolot from "../src/images/samolot.png";
 import { PictureGrid } from "./components/picturegrid";
+import { ToastMessage } from "../src/components/ToastMessage";
 import About from "./pages/About";
 
 const Contener = styled.div`
@@ -45,11 +30,14 @@ function App() {
   const navigate = useNavigate();
   return (
     <>
+      <ToastMessage />
       <Header />
       <Contener>
         {/* <AuthButtons /> */}
 
         {/* <ConfirmationModal /> */}
+
+        <ToastMessage />
 
         <Routes>
           <Route path={"/home"} element={<Home></Home>} />

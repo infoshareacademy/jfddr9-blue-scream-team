@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
 import { addToCart, removeFromCart } from "../store/cartSlice";
+import { ToastContainer, toast } from "react-toastify";
 
 function ConfirmationModal({ id, isAdd, attraction }) {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ function ConfirmationModal({ id, isAdd, attraction }) {
   const handleShow = () => {
     if (id) {
       dispatch(isAdd ? removeFromCart(id) : addToCart({ attraction, id }));
+      toast("Dodano do listy", { type: "success" });
       setShow(true);
     }
   };
