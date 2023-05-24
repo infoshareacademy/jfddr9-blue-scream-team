@@ -10,6 +10,7 @@ import { useNavigate } from "react-router-dom";
 import ConfirmationModal from "./ConfirmationModal";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+import SpinnerSearch from "./SpinnerSearch";
 
 export function AttractionCard({
   id,
@@ -32,7 +33,10 @@ export function AttractionCard({
       });
   }, []);
 
-  if (!attraction || !attraction.preview || !attraction.preview.source) {
+  if (!attraction) {
+    return <SpinnerSearch />;
+  }
+  if (attraction && (!attraction.preview || !attraction.preview.source)) {
     return null;
   }
   console.log(attraction);
