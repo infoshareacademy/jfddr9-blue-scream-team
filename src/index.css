@@ -228,3 +228,8 @@ li {
 img {
   border-radius: 20px;
 }
+.headerexplore {
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+}

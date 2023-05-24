@@ -34,7 +34,9 @@ export function Header() {
   const ToHome = () => {
     navigate("/");
   };
-
+  const GoHome = () => {
+    navigate("/home");
+  };
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -60,7 +62,12 @@ export function Header() {
         style={{ cursor: "pointer" }}
         src={logo}
       ></img>
-      <p className="maintitle">Your next travel starts here.</p>
+      <div className="headerexplore">
+        <p className="maintitle">Your next travel starts here.</p>
+        <button onClick={GoHome} className="firstbutton">
+          Explore
+        </button>
+      </div>
 
       <div className="buttons">
         {isAuth ? (
