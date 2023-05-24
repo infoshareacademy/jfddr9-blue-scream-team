@@ -281,3 +281,6 @@ h2 {
   align-items: center;
   justify-content: center;
 }
+.row-attraction:nth-child(2n) .card-body .row {
+  flex-direction: row-reverse;
+}
