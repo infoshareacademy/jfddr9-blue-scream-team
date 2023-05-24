@@ -249,27 +249,19 @@ img {
 
 @keyframes pulse {
   0% {
-    background-color: hsl(224, 49%, 27%); /* Początkowy kolor tła (biały) */
-    box-shadow: 0 0 5px hsl(224, 49%, 27%); /* Początkowy efekt cienia */
+    background-color: hsl(224, 49%, 27%);
+    box-shadow: 0 0 5px hsl(224, 49%, 27%);
   }
   50% {
-    background-color: hsl(
-      224,
-      49%,
-      27%
-    ); /* Kolor tła w połowie animacji (biały) */
-    box-shadow: 0 0 30px hsl(224, 49%, 27%); /* Efekt cienia w połowie animacji */
+    background-color: hsl(224, 49%, 27%);
+    box-shadow: 0 0 30px hsl(224, 49%, 27%);
   }
   100% {
-    background-color: hsl(
-      224,
-      49%,
-      27%
-    ); /* Kolor tła na końcu animacji (biały) */
-    box-shadow: 0 0 5px hsl(224, 49%, 27%); /* Końcowy efekt cienia */
+    background-color: hsl(224, 49%, 27%);
+    box-shadow: 0 0 5px hsl(224, 49%, 27%);
   }
 }
 
-.explorebutton:hover {
-  scale: 1.1;
-}
+/* .explorebutton:hover {
+  scale: 1.01;
+} */
