@@ -228,20 +228,3 @@ li {
 img {
   border-radius: 20px;
 }
-
-/* About us */
-.personsList {
-  list-style-type: disc;
-  width: 500px;
-  margin: 0 auto;
-}
-
-.personsList li {
-  display: flex;
-  justify-content: center;
-}
-
-.personsList li p {
-  padding-right: 50px;
-  margin-right: auto;
-}
