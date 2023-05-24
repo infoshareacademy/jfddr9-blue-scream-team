@@ -20,7 +20,6 @@ import About from "./pages/About";
 const Contener = styled.div`
   background-color: hsl(158, 50%, 70%);
   font-size: 36px;
-  height: 100%;
   border-radius: 30px;
   padding: 30px;
 `;

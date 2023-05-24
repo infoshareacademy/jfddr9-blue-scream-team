@@ -39,7 +39,7 @@ body {
 }
 .colhome {
   display: grid;
-  height: 400px;
+  height: 500px;
   border-radius: 10px;
   align-items: center;
   justify-content: center;
@@ -159,7 +159,7 @@ li {
   flex-direction: row;
   flex-wrap: wrap;
   /* padding: 0 4px; */
-  max-height: 700px;
+  height: 100vh;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -219,6 +219,7 @@ li {
   margin-left: 30px;
   align-items: center;
   justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .card {
@@ -265,3 +266,11 @@ img {
 /* .explorebutton:hover {
   scale: 1.01;
 } */
+
+p {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2 {
+  font-weight: bold;
+}
