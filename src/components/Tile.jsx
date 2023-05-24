@@ -20,9 +20,9 @@ function Tile({ id, isButtonVisible = true }) {
         style={{
           height:
             attraction == null
-              ? "400px"
+              ? "500px"
               : attraction?.preview
-              ? "400px"
+              ? "500px"
               : "2px",
         }}
       >

@@ -6,6 +6,7 @@ import {
   faTwitter,
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
+import { AboutButton } from "./AboutButton";
 
 const Footer = () => {
   const socialMediaLinks = [
@@ -28,15 +29,18 @@ const Footer = () => {
 
   return (
     <footer>
-      <ul>
-        {socialMediaLinks.map((link, index) => (
-          <li key={index}>
-            <a href={link.url} target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon icon={link.icon} />
-            </a>
-          </li>
-        ))}
-      </ul>
+      <div className="footerimg">
+        <AboutButton />
+        <ul>
+          {socialMediaLinks.map((link, index) => (
+            <li key={index}>
+              <a href={link.url} target="_blank" rel="noopener noreferrer">
+                <FontAwesomeIcon icon={link.icon} />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </footer>
   );
 };
