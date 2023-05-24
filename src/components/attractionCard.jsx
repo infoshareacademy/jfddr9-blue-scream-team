@@ -57,7 +57,12 @@ export function AttractionCard({
                 <img
                   src={attraction.preview.source}
                   onClick={() => navigate(`/attraction/${id}`)}
-                  style={{ height: "400px", width: "100%", objectFit: "cover" }}
+                  style={{
+                    height: "400px",
+                    width: "100%",
+                    objectFit: "cover",
+                    cursor: "pointer",
+                  }}
                 />
               </Col>
 

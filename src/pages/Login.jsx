@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { firebaseErrors } from "../components/utils/firebaseErrors";
 import { useNavigate } from "react-router-dom";
 import { Register } from "./Register";
+import { toast } from "react-toastify";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -24,7 +25,7 @@ export const Login = () => {
       })
       .catch((e) => {
         console.dir(e);
-        alert(firebaseErrors[e.code]);
+        toast(firebaseErrors[e.code]);
       });
   };
 
