@@ -15,6 +15,7 @@ import Attraction from "./pages/Attraction";
 import MyJourney from "./components/MyJourney";
 import { PictureGrid } from "./components/picturegrid";
 import { ToastMessage } from "../src/components/ToastMessage";
+import About from "./pages/About";
 
 const Contener = styled.div`
   background-color: hsl(158, 50%, 70%);
@@ -47,6 +48,7 @@ function App() {
           <Route path={"/attraction/:id"} element={<Attraction />} />
           <Route path={"/journey/:id"} element={<MyJourney />} />
           <Route path={"/"} element={<PictureGrid />} />
+          <Route path={"/about"} element={<About />} />
         </Routes>
       </Contener>
       <Footer />

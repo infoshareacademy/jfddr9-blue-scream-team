@@ -233,3 +233,35 @@ img {
   justify-content: center;
   margin-top: 40px;
 }
+
+.explorebutton {
+  background-color: hsl(224, 49%, 27%);
+  color: rgb(255, 255, 255);
+  height: 55px;
+  width: 250px;
+  border-radius: 10px;
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin-left: 30px;
+  margin-top: 5px;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: hsl(224, 49%, 27%);
+    box-shadow: 0 0 5px hsl(224, 49%, 27%);
+  }
+  50% {
+    background-color: hsl(224, 49%, 27%);
+    box-shadow: 0 0 30px hsl(224, 49%, 27%);
+  }
+  100% {
+    background-color: hsl(224, 49%, 27%);
+    box-shadow: 0 0 5px hsl(224, 49%, 27%);
+  }
+}
+
+/* .explorebutton:hover {
+  scale: 1.01;
+} */
