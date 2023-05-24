@@ -64,7 +64,7 @@ export function Header() {
       ></img>
       <div className="headerexplore">
         <p className="maintitle">Your next travel starts here.</p>
-        <button onClick={GoHome} className="firstbutton">
+        <button onClick={GoHome} className="explorebutton">
           Explore
         </button>
       </div>
