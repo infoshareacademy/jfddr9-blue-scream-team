@@ -30,6 +30,7 @@ import MyJourney from "./components/MyJourney";
 import { Header as MainHeader } from "./pages/header";
 import samolot from "../src/images/samolot.png";
 import { PictureGrid } from "./components/picturegrid";
+import About from "./pages/About";
 
 const Contener = styled.div`
   background-color: hsl(158, 50%, 70%);
@@ -59,6 +60,7 @@ function App() {
           <Route path={"/attraction/:id"} element={<Attraction />} />
           <Route path={"/journey/:id"} element={<MyJourney />} />
           <Route path={"/"} element={<PictureGrid />} />
+          <Route path={"/about"} element={<About />} />
         </Routes>
       </Contener>
       <Footer />
