@@ -285,7 +285,7 @@ h2 {
 }
 .row-attraction:nth-child(2n) .card-body .row {
   flex-direction: row-reverse;
-
+}
 
 .attractionText {
   display: flex;
@@ -294,5 +294,4 @@ h2 {
 
 .textOnRight {
   text-align: left;
-
 }
