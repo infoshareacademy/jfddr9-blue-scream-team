@@ -269,15 +269,26 @@ img {
 
 p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
 }
 
 h2 {
   font-weight: bold;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: hsl(224, 49%, 27%);
 }
 
 .footerimg {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.attractionText {
+  display: flex;
+  gap: 50px;
+}
+
+.textOnRight {
+  text-align: left;
 }
