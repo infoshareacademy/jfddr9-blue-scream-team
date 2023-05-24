@@ -8,14 +8,24 @@ import ConfirmationModal from "./ConfirmationModal";
 import { useSelector } from "react-redux";
 
 function Tile({ id, isButtonVisible = true }) {
-  const [open, setOpen] = useState(false);
+  const [attraction, setAttraction] = useState(null);
   const elementRef = useRef(null);
   const isInViewport = useIsInViewport(elementRef);
   const storedAttractions = useSelector((state) => state.cartReducer.cart);
 
   return (
     <>
-      <div style={{ maxHeight: "600px" }} ref={elementRef}>
+      <div
+        ref={elementRef}
+        style={{
+          height:
+            attraction == null
+              ? "400px"
+              : attraction?.preview
+              ? "400px"
+              : "2px",
+        }}
+      >
         <Collapse in={isInViewport} dimension="width">
           {isInViewport && (
             <AttractionCard
@@ -24,6 +34,8 @@ function Tile({ id, isButtonVisible = true }) {
               isAdd={storedAttractions.find((item) => {
                 return item.id == id;
               })}
+              attraction={attraction}
+              setAttraction={setAttraction}
             />
           )}
         </Collapse>
