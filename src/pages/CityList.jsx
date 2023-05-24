@@ -10,8 +10,11 @@ import {
 import { db } from "../api/firebase";
 import { useNavigate } from "react-router-dom";
 import HomeButton from "../components/HomeButton";
+import { getAuth } from "@firebase/auth";
+import { toast } from "react-toastify";
 
 function CityList() {
+  const auth = getAuth();
   const navigate = useNavigate();
   const citiesCollection = collection(db, "TravelPlans");
 
@@ -26,13 +29,19 @@ function CityList() {
 
   const handleDelete = (id) => {
     const docRef = doc(db, "TravelPlans", id);
-    deleteDoc(docRef);
+    deleteDoc(docRef)
+      .then(() => {
+        toast("Podróż została usunięta", { type: "success" });
+      })
+      .catch(() => {
+        toast("Coś poszło", { type: "error" });
+      });
   };
 
   useEffect(() => {
     onSnapshot(citiesCollection, (querySnapshot) => {
       const cities = getCity(querySnapshot);
-      setCityList(cities);
+      setCityList(cities.filter((item) => item.uid == auth.currentUser.uid));
     });
   }, []);
   console.log(cityList);
