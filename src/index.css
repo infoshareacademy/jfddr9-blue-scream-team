@@ -56,7 +56,6 @@ body {
 }
 
 .insiderow {
-  padding: 10px;
   gap: 20px;
   flex-wrap: wrap;
   border-radius: 50px;
@@ -149,6 +148,7 @@ li {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   border-radius: 10px;
   font-style: normal;
+  margin-left: 30px;
 }
 
 .row-img {
@@ -162,7 +162,8 @@ li {
   height: 100vh;
   background-color: aliceblue;
   border-radius: 15px;
-  padding: 100px;
+  margin: 0;
+  padding-top: 50px;
 }
 
 /* Create four equal columns that sits next to each other */
