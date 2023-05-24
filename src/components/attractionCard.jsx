@@ -43,7 +43,15 @@ export function AttractionCard({
         style={{ display: "flex", flexDirection: "column", height: "600px" }}
       >
         {attraction && (
-          <Card body style={{ width: "100%", padding: "0" }}>
+          <Card
+            body
+            style={{
+              width: "100%",
+              padding: "0",
+              backgroundColor: "white",
+              borderRadius: "20px",
+            }}
+          >
             <Row>
               <Col>
                 <img

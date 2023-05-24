@@ -16,6 +16,7 @@ function Tile({ id, isButtonVisible = true }) {
   return (
     <>
       <div
+        className="row-attraction"
         ref={elementRef}
         style={{
           height:

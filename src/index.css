@@ -49,10 +49,10 @@ body {
 .container {
   display: block;
   border: 10px;
-  gap: 10px;
+  gap: 20px;
   border-radius: 15px;
   overflow-y: scroll;
-  height: 500px;
+  height: 1000px;
 }
 
 .insiderow {
@@ -283,6 +283,9 @@ h2 {
   align-items: center;
   justify-content: center;
 }
+.row-attraction:nth-child(2n) .card-body .row {
+  flex-direction: row-reverse;
+
 
 .attractionText {
   display: flex;
@@ -291,4 +294,5 @@ h2 {
 
 .textOnRight {
   text-align: left;
+
 }
