@@ -10,15 +10,18 @@ function ConfirmationModal({ id, isAdd, attraction }) {
   const [show, setShow] = useState(false);
   const buttonText = !isAdd ? "Add to list" : "Remove from list";
   const bodyText = isAdd
-    ? "Udało Ci się dodać do listy. Aby zobczyć plan podróży przejdź do planu podróży"
-    : "Removed from list";
-  const titleText = isAdd ? "Added to list" : "Removed from list";
+    ? "You might join the lists. To view the travel list go to the travel list."
+    : "Select another attraction!";
+  const titleText = isAdd ? "Added to list" : "Removed from list!";
   const handleClose = () => setShow(false);
   const handleShow = () => {
     if (id) {
       dispatch(isAdd ? removeFromCart(id) : addToCart({ attraction, id }));
       setShow(true);
     }
+    // setTimeout(() => {
+    //   setShow(false)
+    // }, 3000)
   };
 
   return (
