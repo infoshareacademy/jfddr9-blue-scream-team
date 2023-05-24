@@ -46,12 +46,14 @@ function MyJourney() {
   if (!city) {
     return <div>Loading....</div>;
   }
-  const coordinates = city.attraction.map((item) => {
-    return {
-      lat: item.attraction.point.lat,
-      lng: item.attraction.point.lon,
-    };
-  });
+  const coordinates = city.attraction
+    .filter((item) => item.attraction?.point)
+    .map((item) => {
+      return {
+        lat: item.attraction?.point?.lat,
+        lng: item.attraction?.point?.lon,
+      };
+    });
   console.log(coordinates);
 
   const handleUpdate = async (id) => {
@@ -69,16 +71,16 @@ function MyJourney() {
       <button className="firstbutton" onClick={() => history.back()}>
         Back
       </button>
-      <h1>MyJourney</h1>
+      <h1>MyJourney {city.travelName}</h1>
       <Container className="container">
         <Row className="insiderow">
           {city.attraction.map((item) => {
             return (
               <Col className="colhome">
                 <Card body style={{ width: "400px" }}>
-                  {item.attraction.name}
+                  {item.attraction?.name}
                   <img
-                    src={item.attraction.preview.source}
+                    src={item.attraction?.preview?.source}
                     onClick={() => navigate(`/attraction/${item.id}`)}
                   />
                   <button onClick={() => handleUpdate(item.id)}>

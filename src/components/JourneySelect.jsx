@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { onSnapshot, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../api/firebase";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const citiesCollection = collection(db, "TravelPlans");
 
@@ -39,7 +40,7 @@ export const JourneySelect = ({ attraction }) => {
         return item.xid == attraction.xid;
       })
     ) {
-      alert("Ta atrakcja jest już dodana do Twojej listy podróży!");
+      toast("Ta atrakcja jest już dodana do Twojej listy podróży!");
       return;
     }
     const docRef = doc(db, "TravelPlans", event.value);
@@ -47,8 +48,10 @@ export const JourneySelect = ({ attraction }) => {
       ...journey,
       attraction: [...journey.attraction, attraction],
     }).then(() => {
-      alert("Dodano do listy podróży");
-      navigate(0);
+      toast("Dodano do listy podróży", { toastId: "select success!" });
+      setTimeout(() => {
+        navigate(0);
+      }, 3000);
     });
   };
 
