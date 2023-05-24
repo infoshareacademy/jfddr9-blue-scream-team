@@ -1,7 +1,13 @@
 import React from "react";
-
+import HomeButton from "../components/HomeButton";
+import { useNavigate } from "react-router-dom";
 
 function About() {
+  const navigate = useNavigate();
+  const navigateToHome = () => {
+    navigate("/");
+  };
+
   return (
     <div>
       <h1>About us</h1>
@@ -9,6 +15,7 @@ function About() {
         <li>
           <p> Aleksandra </p>
           <button
+            className="firstbutton"
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/aleksandra-jab%C5%82o%C5%84ska-justme/",
@@ -23,6 +30,7 @@ function About() {
         <li>
           <p>Katarzyna</p>
           <button
+            className="firstbutton"
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/katarzyna-brejna",
@@ -37,6 +45,7 @@ function About() {
         <li>
           <p>Krzysztof</p>
           <button
+            className="firstbutton"
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/krzysztof-szmidt-37a69a7b/",
@@ -51,6 +60,7 @@ function About() {
         <li>
           <p>Mateusz</p>
           <button
+            className="firstbutton"
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/mateusz-czapiewski-8a866a277/",
@@ -65,6 +75,7 @@ function About() {
         <li>
           <p>Paweł</p>
           <button
+            className="firstbutton"
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/kurowski-pawel/",
@@ -79,6 +90,7 @@ function About() {
         <li>
           <p>Robert</p>
           <button
+            className="firstbutton"
             onClick={() => {
               window.open(
                 "https://www.linkedin.com/in/robert-d%C4%85browski-55b097273/",
@@ -90,6 +102,10 @@ function About() {
           </button>
         </li>
       </ul>
+
+      <button className="firstbutton" type="submit" onClick={navigateToHome}>
+        Home
+      </button>
     </div>
   );
 }
