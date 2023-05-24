@@ -12,13 +12,11 @@ function AutoLayout() {
   return (
     <Container className="container">
       <Row className="insiderow">
-        {storedAttractions.map((id) => {
-          return (
-            <Col className="colhome">
-              <Tile id={id} />
-            </Col>
-          );
-        })}
+        <Col>
+          {storedAttractions.map((id) => {
+            return <Tile id={id} />;
+          })}
+        </Col>
       </Row>
     </Container>
   );

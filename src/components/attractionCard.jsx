@@ -9,12 +9,17 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import ConfirmationModal from "./ConfirmationModal";
 
-export function AttractionCard({ id, isButtonVisible, isAdd }) {
+export function AttractionCard({
+  id,
+  isButtonVisible,
+  isAdd,
+  attraction,
+  setAttraction,
+}) {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
 
-  const [attraction, setAttraction] = useState(null);
   useEffect(() => {
     fetch(
       `https://api.opentripmap.com/0.1/en/places/xid/${id}?apikey=${apiKey}`
