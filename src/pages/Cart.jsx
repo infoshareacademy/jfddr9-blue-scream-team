@@ -49,7 +49,7 @@ export function Cart() {
     <div className="traveltitle">
       <h1 className="travellist">My travel list</h1>
       <div>
-        <Container className="container">
+        <Container className="wrapper">
           <Row className="insiderow">
             {storedAttractions.map((item) => {
               return (

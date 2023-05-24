@@ -10,7 +10,7 @@ function AutoLayout() {
   );
 
   return (
-    <Container className="container">
+    <Container className="wrapper">
       <Row className="insiderow">
         <Col>
           {storedAttractions.map((id) => {

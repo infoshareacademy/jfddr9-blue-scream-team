@@ -51,8 +51,9 @@ body {
   border: 10px;
   gap: 20px;
   border-radius: 15px;
+  max-height: 600px;
+  min-height: 50px;
   overflow-y: scroll;
-  height: 1000px;
 }
 
 .insiderow {
@@ -93,6 +94,7 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 254px;
 }
 
 .loginwindow1 {
@@ -302,4 +304,20 @@ h2 {
 
 .textOnRight {
   text-align: left;
+}
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  background-color: transparent !important;
+
+  box-shadow: none !important;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
