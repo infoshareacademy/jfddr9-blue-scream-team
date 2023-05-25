@@ -83,7 +83,10 @@ function MyJourney() {
                     src={item.attraction?.preview?.source}
                     onClick={() => navigate(`/attraction/${item.id}`)}
                   />
-                  <button onClick={() => handleUpdate(item.id)}>
+                  <button
+                    className="firstbutton"
+                    onClick={() => handleUpdate(item.id)}
+                  >
                     Remove from list
                   </button>
                 </Card>
