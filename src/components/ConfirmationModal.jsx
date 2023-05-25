@@ -19,9 +19,9 @@ function ConfirmationModal({ id, isAdd, attraction }) {
       dispatch(isAdd ? removeFromCart(id) : addToCart({ attraction, id }));
       setShow(true);
     }
-    // setTimeout(() => {
-    //   setShow(false)
-    // }, 3000)
+    setTimeout(() => {
+      setShow(false);
+    }, 3000);
   };
 
   return (
