@@ -27,6 +27,15 @@ export function Cart() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (!storedAttractions.length) {
+      toast("Please add at least one attraction", { type: "warning" });
+      return;
+    }
+    if (!travelName) {
+      toast("Trip name field is mandatory", { type: "warning" });
+      return;
+    }
+
     const travelData = {
       travelName,
       uid: auth.currentUser.uid,
@@ -44,7 +53,8 @@ export function Cart() {
         console.log(error);
       });
   };
-  console.log(storedAttractions);
+  console.log(auth);
+
   return (
     <div className="traveltitle">
       <h1 className="travellist">My travel list</h1>
@@ -73,23 +83,29 @@ export function Cart() {
         </Container>
         <HomeButton />
         <CityListButton />
-        <form id="form_div">
-          <div className="traveldiv">
-            <input
-              className="input"
-              type="text"
-              value={travelName}
-              onChange={(e) => setTravelName(e.target.value)}
-            />
-            <button
-              className="firstbutton"
-              type="submit"
-              onClick={handleSubmit}
-            >
-              Save Trip
-            </button>
-          </div>
-        </form>
+        {auth.currentUser ? (
+          <form id="form_div">
+            <div className="traveldiv">
+              <input
+                className="input"
+                type="text"
+                value={travelName}
+                onChange={(e) => {
+                  setTravelName(e.target.value);
+                }}
+              />
+              <button
+                className="firstbutton"
+                type="submit"
+                onClick={handleSubmit}
+              >
+                Save Trip
+              </button>
+            </div>
+          </form>
+        ) : (
+          <div>Log in or register to save your trip</div>
+        )}
       </div>
     </div>
   );

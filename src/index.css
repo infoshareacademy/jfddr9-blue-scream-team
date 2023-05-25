@@ -83,6 +83,9 @@ li {
 .svg-inline--fa {
   color: hsl(224, 49%, 27%);
 }
+.svg-inline--fa:hover {
+  scale: 1.1;
+}
 
 .footer1 {
   display: flex;
