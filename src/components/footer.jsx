@@ -7,8 +7,10 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import { AboutButton } from "./AboutButton";
+import { useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const location = useLocation();
   const socialMediaLinks = [
     {
       name: "Facebook",
@@ -30,7 +32,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="footerimg">
-        <AboutButton />
+        {location.pathname != "/about" && <AboutButton />}
         <ul>
           {socialMediaLinks.map((link, index) => (
             <li key={index}>
