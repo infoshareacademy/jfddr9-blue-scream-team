@@ -19,7 +19,8 @@ body {
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  margin-left: 0px;
+  margin-left: 30px;
+  cursor: pointer;
 }
 .buttons {
   display: flex;
@@ -241,7 +242,6 @@ li {
 
 img {
   border-radius: 20px;
-  margin-top: 20px;
 }
 .headerexplore {
   align-items: center;
@@ -458,4 +458,16 @@ div {
   align-items: center;
   font-weight: bold;
   width: auto;
+}
+
+.firstbutton2 {
+  background-color: hsl(224, 49%, 27%);
+  color: rgb(255, 255, 255);
+  height: 35px;
+  width: 120px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0%;
 }

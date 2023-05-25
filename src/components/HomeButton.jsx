@@ -8,7 +8,7 @@ export function HomeButton() {
   };
 
   return (
-    <button className="firstbutton" type="submit" onClick={navigateToHome}>
+    <button className="firstbutton2" type="submit" onClick={navigateToHome}>
       Search
     </button>
   );
