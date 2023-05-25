@@ -31,10 +31,10 @@ function CityList() {
     const docRef = doc(db, "TravelPlans", id);
     deleteDoc(docRef)
       .then(() => {
-        toast("Podróż została usunięta", { type: "success" });
+        toast("Trip removed", { type: "success" });
       })
       .catch(() => {
-        toast("Coś poszło", { type: "error" });
+        toast("Failed action", { type: "error" });
       });
   };
 

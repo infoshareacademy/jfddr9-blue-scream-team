@@ -283,6 +283,8 @@ img {
 p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-style: italic;
+  font-size: 20px;
+  margin-top: 30px;
 }
 
 h2 {
@@ -307,6 +309,8 @@ h2 {
 
 .textOnRight {
   text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
 }
 
 .modal-header {
@@ -341,4 +345,39 @@ h2 {
 .wrapper {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+}
+
+.dot1:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #d42a00;
+  display: block;
+  animation: pulse5 1s ease 1s infinite;
+}
+
+@keyframes pulse5 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+.backbutton {
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 0;
 }
