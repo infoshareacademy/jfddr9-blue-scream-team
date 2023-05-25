@@ -58,7 +58,7 @@ export const JourneySelect = ({ attraction }) => {
 
   return (
     <Select
-      placeholder={"Add to journey"}
+      placeholder={"Add to your journey"}
       onChange={handleChange}
       options={options}
     />
