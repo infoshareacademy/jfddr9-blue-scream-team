@@ -127,7 +127,9 @@ export function Cart() {
             </div>
           </form>
         ) : (
-          <div>Log in or register to save your trip</div>
+          <div className="bottomtext2">
+            Log in or register to save your trip!
+          </div>
         )}
       </div>
     </div>
