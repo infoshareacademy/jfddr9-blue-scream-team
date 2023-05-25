@@ -51,12 +51,12 @@ body {
   border: 10px;
   gap: 20px;
   border-radius: 15px;
+  max-height: 600px;
+  min-height: 50px;
   overflow-y: scroll;
-  height: 1000px;
 }
 
 .insiderow {
-  padding: 10px;
   gap: 20px;
   flex-wrap: wrap;
   border-radius: 50px;
@@ -94,7 +94,7 @@ li {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  min-height: 254px;
 }
 
 .loginwindow1 {
@@ -119,11 +119,11 @@ li {
 .headerbuttons {
   display: flex;
   flex-direction: row;
-  background-color: hsl(159, 100%, 95%);
+  background-color: aliceblue;
   border-radius: 30px;
 }
 .logo {
-  height: 200px;
+  height: 180px;
   width: auto;
   overflow: hidden;
 }
@@ -137,18 +137,20 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
 }
 
 .maintitle {
   display: flex;
   align-items: center;
   justify-content: left;
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: bolder;
   color: hsl(224, 49%, 27%);
-  margin-left: 20px;
   margin-bottom: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+  font-style: normal;
+  margin-left: 30px;
 }
 
 .row-img {
@@ -160,6 +162,10 @@ li {
   flex-wrap: wrap;
   /* padding: 0 4px; */
   height: 100vh;
+  background-color: aliceblue;
+  border-radius: 15px;
+  margin: 0;
+  padding-top: 50px;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -232,40 +238,44 @@ img {
 .headerexplore {
   align-items: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
+  border-radius: 15px;
+  max-height: 60px;
 }
 
 .explorebutton {
   background-color: hsl(224, 49%, 27%);
   color: rgb(255, 255, 255);
-  height: 55px;
-  width: 250px;
+  height: 40px;
+  width: 350px;
   border-radius: 10px;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin-left: 30px;
-  margin-top: 5px;
-  animation: pulse 1s infinite;
+  margin-top: 10px;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
   0% {
     background-color: hsl(224, 49%, 27%);
-    box-shadow: 0 0 5px hsl(224, 49%, 27%);
+    box-shadow: 0 0 2px hsl(224, 49%, 27%);
   }
+
+  25% {
+    background-color: hsl(224, 49%, 27%);
+    box-shadow: 0 0 20px hsl(224, 49%, 27%);
+  }
+
   50% {
     background-color: hsl(224, 49%, 27%);
-    box-shadow: 0 0 30px hsl(224, 49%, 27%);
+    box-shadow: 0 0 20px hsl(224, 49%, 27%);
   }
   100% {
     background-color: hsl(224, 49%, 27%);
-    box-shadow: 0 0 5px hsl(224, 49%, 27%);
+    box-shadow: 0 0 2px hsl(224, 49%, 27%);
   }
 }
-
-/* .explorebutton:hover {
-  scale: 1.01;
-} */
 
 p {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -295,6 +305,7 @@ h2 {
 .textOnRight {
   text-align: left;
 }
+
 .modal-header {
   background-color: #8cd9bd;
   text-align: center;
@@ -311,4 +322,21 @@ h2 {
 .modal-button {
   background-color: hsl(224, 49%, 27%);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+
+.css-bhp9pd-MuiPaper-root-MuiCard-root {
+  background-color: transparent !important;
+
+  box-shadow: none !important;
+}
+
+.wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.wrapper {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
 }
