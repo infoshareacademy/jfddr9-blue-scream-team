@@ -19,7 +19,7 @@ body {
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  margin-left: 30px;
+  /* margin-left: 30px; */
   cursor: pointer;
 }
 .buttons {
@@ -130,6 +130,8 @@ li {
   height: 180px;
   width: auto;
   overflow: hidden;
+  margin-left: 30px;
+  margin-top: 20px;
 }
 .buttons {
   align-items: center;
@@ -242,6 +244,7 @@ li {
 
 img {
   border-radius: 20px;
+  margin-bottom: 20px;
 }
 .headerexplore {
   align-items: center;
@@ -322,7 +325,6 @@ h2 {
   padding: 20px;
   font-weight: bolder;
   margin-bottom: 20px;
-  margin-top: 20px;
   /* font-style: italic; */
 }
 
@@ -398,7 +400,8 @@ h2 {
   justify-content: left;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 0;
+  padding-left: 0;
+  margin-left: 0;
 }
 
 .travelNameP {
