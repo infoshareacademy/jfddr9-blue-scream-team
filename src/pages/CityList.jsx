@@ -61,7 +61,7 @@ function CityList() {
               }}
             >
               <div>
-                <p>{city.travelName}</p>
+                <p className="travelNameP">{city.travelName}</p>
                 <button
                   className="firstbutton"
                   onClick={() => navigate(`/journey/${city.id}`)}

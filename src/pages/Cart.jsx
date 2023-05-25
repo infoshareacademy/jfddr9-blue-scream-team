@@ -4,9 +4,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Tile from "../components/Tile";
 import HomeButton from "../components/HomeButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { db } from "../api/firebase";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, onSnapshot } from "firebase/firestore";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { Card } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -14,6 +14,7 @@ import CityListButton from "../components/ListButton";
 import ConfirmationModal from "../components/ConfirmationModal";
 import { clearCart } from "../store/cartSlice";
 import { toast } from "react-toastify";
+import { JourneySelect } from "../components/JourneySelect";
 
 const cartRef = collection(db, "TravelPlans");
 
@@ -24,6 +25,24 @@ export function Cart() {
   const storedAttractions = useSelector((state) => state.cartReducer.cart);
 
   const [travelName, setTravelName] = useState("");
+  const citiesCollection = collection(db, "TravelPlans");
+
+  const [cityList, setCityList] = useState([]);
+
+  const getCity = (querySnapshot) => {
+    return querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+  };
+
+  useEffect(() => {
+    onSnapshot(citiesCollection, (querySnapshot) => {
+      const cities = getCity(querySnapshot);
+      setCityList(cities.filter((item) => item.uid == auth.currentUser.uid));
+    });
+  }, []);
+  console.log(cityList);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -33,6 +52,10 @@ export function Cart() {
     }
     if (!travelName) {
       toast("Trip name field is mandatory", { type: "warning" });
+      return;
+    }
+    if (cityList.find((item) => item.travelName == travelName)) {
+      toast("Travel name exsists", { type: "error" });
       return;
     }
 

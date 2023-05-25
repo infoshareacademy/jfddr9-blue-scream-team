@@ -71,7 +71,12 @@ export function Search() {
           placeholder="Search places here..."
           value={city}
         ></input>
-        <button className="firstbutton">Search</button>
+        <button
+          disabled={sessionStorage.getItem("city") == city}
+          className="firstbutton"
+        >
+          Search
+        </button>
       </form>
     </SearchText>
   );
