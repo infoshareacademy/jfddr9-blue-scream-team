@@ -28,26 +28,31 @@ function Attraction() {
   console.log(attraction);
   return (
     <div>
-      <JourneySelect attraction={attraction} />
-      <button className="firstbutton" onClick={() => history.back()}>
-        Back
-      </button>
+      <div className="backbutton">
+        <button className="firstbutton" onClick={() => history.back()}>
+          Back
+        </button>
+      </div>
+      <div style={{ paddingBottom: "10px" }}>
+        <JourneySelect attraction={attraction} />
+      </div>
+
       <div className="attractionText">
         <img
-          src={attraction.preview.source}
+          src={attraction?.preview?.source}
           style={{ height: "500px", width: "500px" }}
         />
         <div className="textOnRight">
-          {attraction.name}
+          {attraction?.name}
           <div>
-            {attraction.address.pedestrian +
+            {attraction?.address?.pedestrian +
               " " +
-              attraction.address.house_number}
+              attraction?.address?.house_number}
           </div>
           <div>
-            {attraction.address.postcode + " " + attraction.address.state}
+            {attraction?.address?.postcode + " " + attraction?.address?.state}
           </div>
-          <div>{attraction.address.country}</div>
+          <div>{attraction?.address?.country}</div>
         </div>
       </div>
 
@@ -62,11 +67,11 @@ function Attraction() {
       {attraction.url && (
         <div>
           <a href={attraction.url}>
-            <button>Info</button>
+            <button className="firstbutton">Info</button>
           </a>
         </div>
       )}
-      <SimpleMap lat={attraction.point.lat} lng={attraction.point.lon} />
+      <SimpleMap lat={attraction?.point?.lat} lng={attraction?.point?.lon} />
     </div>
   );
 }

@@ -5,12 +5,13 @@ import { onSnapshot, collection, doc, updateDoc } from "firebase/firestore";
 import { db } from "../api/firebase";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { getAuth } from "firebase/auth";
 
 const citiesCollection = collection(db, "TravelPlans");
 
 export const JourneySelect = ({ attraction }) => {
   const navigate = useNavigate();
-
+  const auth = getAuth();
   const [cityList, setCityList] = useState([]);
 
   const getCity = (querySnapshot) => {
@@ -23,7 +24,7 @@ export const JourneySelect = ({ attraction }) => {
   useEffect(() => {
     onSnapshot(citiesCollection, (querySnapshot) => {
       const cities = getCity(querySnapshot);
-      setCityList(cities);
+      setCityList(cities.filter((item) => item.uid == auth.currentUser.uid));
     });
   }, []);
   const options = cityList.map((item) => {
@@ -40,7 +41,7 @@ export const JourneySelect = ({ attraction }) => {
         return item.xid == attraction.xid;
       })
     ) {
-      toast("Ta atrakcja jest już dodana do Twojej listy podróży!");
+      toast("This attraction is already added to your list!");
       return;
     }
     const docRef = doc(db, "TravelPlans", event.value);
@@ -48,7 +49,7 @@ export const JourneySelect = ({ attraction }) => {
       ...journey,
       attraction: [...journey.attraction, attraction],
     }).then(() => {
-      toast("Dodano do listy podróży", { toastId: "select success!" });
+      toast("Added to list", { toastId: "select success!" });
       setTimeout(() => {
         navigate(0);
       }, 3000);
@@ -57,7 +58,7 @@ export const JourneySelect = ({ attraction }) => {
 
   return (
     <Select
-      placeholder={"Dodaj do podróży"}
+      placeholder={"Add to journey"}
       onChange={handleChange}
       options={options}
     />
