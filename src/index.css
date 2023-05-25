@@ -19,7 +19,7 @@ body {
   border-radius: 10px;
   font-size: 1.2rem;
   font-weight: bold;
-  /* margin-left: 30px; */
+  margin-left: 30px;
 }
 .buttons {
   display: flex;
@@ -74,37 +74,6 @@ li {
   list-style-type: none;
   display: inline;
   padding: 20px;
-}
-.about {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
-  font-weight: bold;
-  color: hsl(224, 49%, 27%);
-  background-color: white;
-  border-radius: 10px;
-  margin-left: 30%;
-  margin-right: 30%;
-}
-.about-us {
-  display: flex;
-  border: solid 3px hsl(224, 49%, 27%);
-  border-radius: 20px;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  background-color: aliceblue;
-  opacity: 0.9;
-  margin-top: 20px;
-}
-
-.personsList {
-  display: flex;
-  justify-content: space-around;
-}
-.img-link {
-  margin-bottom: 20px;
 }
 
 .firstbutton:hover {
@@ -432,4 +401,8 @@ h2 {
   font-size: 18px;
   color: red;
   font-weight: bold;
+}
+
+div {
+  border-radius: 10px !important;
 }
