@@ -10,15 +10,18 @@ function ConfirmationModal({ id, isAdd, attraction }) {
   const [show, setShow] = useState(false);
   const buttonText = !isAdd ? "Add to list" : "Remove from list";
   const bodyText = isAdd
-    ? "Go to travel list to see all your attractions."
-    : "Removed from list.";
-  const titleText = isAdd ? "Added to list" : "Removed from list";
+    ? "You might join the lists. To view the travel list go to the travel list."
+    : "Select another attraction!";
+  const titleText = isAdd ? "Added to list" : "Removed from list!";
   const handleClose = () => setShow(false);
   const handleShow = () => {
     if (id) {
       dispatch(isAdd ? removeFromCart(id) : addToCart({ attraction, id }));
       setShow(true);
     }
+    setTimeout(() => {
+      setShow(false);
+    }, 3000);
   };
 
   return (
@@ -32,12 +35,19 @@ function ConfirmationModal({ id, isAdd, attraction }) {
       </Button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header
+          // closeButton (odkomentuj a będzie działać)
+          className="modal-header"
+        >
           <Modal.Title>{titleText}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{bodyText}</Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Body className="modal-body">{bodyText}</Modal.Body>
+        <Modal.Footer className="modal-footer">
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            className="modal-button"
+          >
             OK!
           </Button>
         </Modal.Footer>
