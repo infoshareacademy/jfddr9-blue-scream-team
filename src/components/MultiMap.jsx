@@ -3,11 +3,7 @@ import GoogleMapReact from "google-map-react";
 import { useState } from "react";
 
 //to trzeba będzie ostylować
-const AnyReactComponent = ({ text }) => (
-  <div style={{ backgroundColor: "red", width: "100px", height: "30px" }}>
-    {text}
-  </div>
-);
+const AnyReactComponent = ({ text }) => <div className="dot1">{text}</div>;
 
 export default function MultiMap({ coordinates }) {
   const points = {
@@ -40,9 +36,7 @@ export default function MultiMap({ coordinates }) {
         defaultZoom={11}
       >
         {coordinates.map((item) => {
-          return (
-            <AnyReactComponent lat={item.lat} lng={item.lng} text="My Marker" />
-          );
+          return <AnyReactComponent lat={item.lat} lng={item.lng} />;
         })}
       </GoogleMapReact>
     </div>

@@ -325,7 +325,7 @@ h2 {
 .modal-button {
   background-color: hsl(224, 49%, 27%);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-
+}
 
 .css-bhp9pd-MuiPaper-root-MuiCard-root {
   background-color: transparent !important;
@@ -337,9 +337,54 @@ h2 {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
 .wrapper {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
+.dot1:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: red;
+  display: block;
+  animation: pulse4 1s ease 0s infinite;
+}
+@keyframes pulse4 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+@keyframes pulse4 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
+.backbutton {
+  display: flex;
+  justify-content: left;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

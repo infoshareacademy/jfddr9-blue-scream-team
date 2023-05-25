@@ -29,9 +29,11 @@ function Attraction() {
   return (
     <div>
       <JourneySelect attraction={attraction} />
-      <button className="firstbutton" onClick={() => history.back()}>
-        Back
-      </button>
+      <div className="backbutton">
+        <button className="firstbutton" onClick={() => history.back()}>
+          Back
+        </button>
+      </div>
       <div className="attractionText">
         <img
           src={attraction.preview.source}

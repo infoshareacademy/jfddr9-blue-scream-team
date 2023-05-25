@@ -2,11 +2,7 @@ import React from "react";
 import GoogleMapReact from "google-map-react";
 
 //to trzeba będzie ostylować
-const AnyReactComponent = ({ text }) => (
-  <div style={{ backgroundColor: "red", width: "100px", height: "30px" }}>
-    {text}
-  </div>
-);
+const AnyReactComponent = ({ text }) => <div className="dot1">{text}</div>;
 
 export default function SimpleMap({ lat, lng }) {
   const defaultProps = {
@@ -25,7 +21,7 @@ export default function SimpleMap({ lat, lng }) {
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
       >
-        <AnyReactComponent lat={lat} lng={lng} text="My Marker" />
+        <AnyReactComponent lat={lat} lng={lng} />
       </GoogleMapReact>
     </div>
   );
