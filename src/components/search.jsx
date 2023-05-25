@@ -2,7 +2,7 @@ import styled from "styled-components";
 import useFetch from "react-fetch-hook";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addAttraction } from "../store/attractionsSlice";
+import { addAttraction, clearAttraction } from "../store/attractionsSlice";
 import { useSelector } from "react-redux";
 
 const SearchText = styled.div`
@@ -21,7 +21,7 @@ export function Search() {
     (state) => state.attractionsReducer.attractions
   );
   const [index, setIndex] = useState(0);
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState(sessionStorage.getItem("city") || "");
   const [cordinate, setCordinate] = useState({ lat: 0, lon: 0 });
   const [attractions, setAttractions] = useState([]);
   const dispatch = useDispatch();
@@ -31,6 +31,10 @@ export function Search() {
   const apiTripUrl = `https://api.opentripmap.com/0.1/en/places/radius?radius=30000&lon=44&lat=44&apikey=5ae2e3f221c38a28845f05b6d4abedb7255e1841191e88000d07bd49`;
   const attraction = `https://api.opentripmap.com/0.1/en/places/xid/1812869?apikey=5ae2e3f221c38a28845f05b6d4abedb7255e1841191e88000d07bd49`;
   const { isLoading, data, error } = useFetch(attraction);
+
+  useEffect(() => {
+    city && handleClick();
+  }, []);
 
   useEffect(() => {
     fetch(
@@ -43,7 +47,11 @@ export function Search() {
         dispatch(addAttraction(ids.splice(0, 30)));
       });
   }, [cordinate.lat]);
-  const handleClick = () => {
+
+  const handleClick = (e) => {
+    e && e.preventDefault();
+    sessionStorage.setItem("city", city);
+    dispatch(clearAttraction());
     fetch(
       `https://api.opentripmap.com/0.1/en/places/geoname?apikey=${apiKey}&name=${city}`
     )
@@ -56,14 +64,15 @@ export function Search() {
 
   return (
     <SearchText>
-      <input
-        onChange={(e) => setCity(e.target.value)}
-        className="input"
-        placeholder="Search places here..."
-      ></input>
-      <button onClick={handleClick} className="firstbutton">
-        Search
-      </button>
+      <form onSubmit={handleClick}>
+        <input
+          onChange={(e) => setCity(e.target.value)}
+          className="input"
+          placeholder="Search places here..."
+          value={city}
+        ></input>
+        <button className="firstbutton">Search</button>
+      </form>
     </SearchText>
   );
 }

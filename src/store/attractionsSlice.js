@@ -16,9 +16,13 @@ export const attractionsSlice = createSlice({
 
       state.attractions = attraction;
     },
+    clearAttraction: (state, action) => {
+      state.attractions = [];
+    },
   },
 });
 
-export const { updateString, addAttraction } = attractionsSlice.actions;
+export const { updateString, addAttraction, clearAttraction } =
+  attractionsSlice.actions;
 
 export const attractionsReducer = attractionsSlice.reducer;
