@@ -511,3 +511,19 @@ div {
 .img-link {
   margin-bottom: 20px;
 }
+
+ol {
+  background-color: aliceblue;
+  border-radius: 10px;
+}
+
+li {
+  margin-left: 10px;
+  border-radius: 0 10px 10px 0;
+}
+
+.buttongroup {
+  width: 252px;
+  display: flex;
+  justify-content: space-between;
+}
