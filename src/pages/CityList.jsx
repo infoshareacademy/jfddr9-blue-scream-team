@@ -48,7 +48,7 @@ function CityList() {
 
   return (
     <div>
-      <h1>List of places</h1>
+      <p class="travellist">List of places</p>
       <div>
         <ol style={{ listStyle: "decimal" }}>
           {cityList.map((city) => (
