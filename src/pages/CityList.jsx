@@ -58,32 +58,42 @@ function CityList() {
                 display: "list-item",
                 listStylePosition: "inside",
                 listStyle: "decimal",
+                backgroundColor: "aliceblue",
+                borderRadius: "10px",
               }}
             >
-              <div>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  borderRadius: "10px",
+                }}
+              >
                 <p className="travelNameP">{city.travelName}</p>
-                <button
-                  className="firstbutton"
-                  onClick={() => navigate(`/journey/${city.id}`)}
-                >
-                  View
-                </button>
-                <button
-                  className="firstbutton"
-                  onClick={() => handleDelete(city.id)}
-                >
-                  Remove
-                </button>
+                <div className="buttongroup">
+                  <button
+                    className="firstbutton"
+                    onClick={() => navigate(`/journey/${city.id}`)}
+                  >
+                    View
+                  </button>
+                  <button
+                    className="firstbutton"
+                    onClick={() => handleDelete(city.id)}
+                  >
+                    Remove
+                  </button>
+                </div>
               </div>
             </li>
           ))}
         </ol>
       </div>
-      <ol>
-        <li>
-          <HomeButton />
-        </li>
-      </ol>
+      <div>
+        <HomeButton />
+      </div>
     </div>
   );
 }

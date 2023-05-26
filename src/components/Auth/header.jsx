@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { useState, useEffect } from "react";
 import { onAuthStateChanged } from "firebase/auth";
-import logo from "../../images/newlogo.png";
+import logo from "../../images/newlogo.svg";
 import { clickfunction } from "../Theme";
 import { clickfunction2 } from "../Theme";
 import { RegisterButton } from "./RegisterButton";
@@ -66,6 +66,7 @@ export function Header() {
         style={{ cursor: "pointer" }}
         src={logo}
       ></img>
+
       <div className="headerexplore">
         <p className="maintitle">Bored? Plan your travel with us.</p>
         <button onClick={GoHome} className="explorebutton">

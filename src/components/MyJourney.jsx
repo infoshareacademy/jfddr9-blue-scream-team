@@ -65,13 +65,13 @@ function MyJourney() {
 
     // setDraftId(null);
   };
-  console.log(city);
+
   return (
     <div>
       <button className="firstbutton" onClick={() => history.back()}>
         Back
       </button>
-      <h1>MyJourney {city.travelName}</h1>
+      <h1>{city.travelName}</h1>
       <Container className="container">
         <Row className="insiderow">
           {city.attraction.map((item) => {
