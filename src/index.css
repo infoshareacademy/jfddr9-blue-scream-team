@@ -45,8 +45,12 @@ body {
   align-items: center;
   justify-content: center;
   flex: 1 0 33.33%;
-}
 
+  background-color: aliceblue;
+}
+.colhome:hover {
+  background-color: rgba(240, 248, 255, 0.685);
+}
 .container {
   display: block;
   border: 10px;
@@ -424,7 +428,7 @@ div {
 } */
 
 .css-1jqq78o-placeholder {
-  font-size: 20px;
+  font-size: 16px;
 
   align-items: center;
   justify-content: center;
@@ -433,7 +437,7 @@ div {
 }
 
 .css-art2ul-ValueContainer2 {
-  font-size: 20px;
+  font-size: 16px;
   align-items: center;
   justify-content: center;
   font-weight: bold;
@@ -441,7 +445,7 @@ div {
 }
 
 .css-13cymwt-control {
-  font-size: 20px;
+  font-size: 16px;
   align-items: center;
   justify-content: center;
   font-weight: bold;
@@ -449,7 +453,7 @@ div {
 }
 
 .css-b62m3t-container {
-  font-size: 20px;
+  font-size: 16px;
   align-items: center;
   justify-content: center;
   font-weight: bold;
@@ -457,7 +461,7 @@ div {
 }
 
 .css-1jqq78o-placeholder {
-  font-size: 20px;
+  font-size: 16px;
   align-items: center;
   font-weight: bold;
   width: auto;
@@ -473,6 +477,7 @@ div {
   font-weight: bold;
   cursor: pointer;
   padding: 0%;
+  margin-right: 10px;
 }
 
 .about {

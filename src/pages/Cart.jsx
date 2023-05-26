@@ -87,9 +87,15 @@ export function Cart() {
             {storedAttractions.map((item) => {
               return (
                 <Col className="colhome">
-                  <Card body style={{ width: "400px" }}>
-                    {item.attraction.name}
+                  <Card
+                    body
+                    style={{ width: "400px", backgroundColor: "white" }}
+                  >
+                    <div style={{ height: "120px" }}>
+                      {item.attraction.name}
+                    </div>
                     <img
+                      style={{ height: "300px", objectFit: "cover" }}
                       src={item.attraction.preview.source}
                       onClick={() => navigate(`/attraction/${item.id}`)}
                     />
