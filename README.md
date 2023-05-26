@@ -1,5 +1,7 @@
 # jfddr9-blue-scream-team
+
 projekt zespołowy
+
 <!-- 
 Aplikacja "Bluescream Travel" jet kierowana do osób preferujących aktywny sposób spędzania wolnego czasu, zainteresowanych podrózowaniem, w szczególności realizujących swoją pasję w formie tzw City Breaków (weekendowych, szybkich odwiedzin wybranego miasta)
 
