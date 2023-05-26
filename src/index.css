@@ -526,3 +526,14 @@ li {
   display: flex;
   justify-content: space-between;
 }
+
+.textOnRight1 {
+  text-align: left;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  background-color: aliceblue;
+  padding: 20px;
+  font-weight: bolder;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}

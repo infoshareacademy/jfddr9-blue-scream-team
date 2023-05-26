@@ -58,7 +58,7 @@ function Attraction() {
 
       {attraction.wikipedia_extracts && (
         <div
-          className="textOnRight"
+          className="textOnRight1"
           dangerouslySetInnerHTML={{
             __html: attraction.wikipedia_extracts.html,
           }}
